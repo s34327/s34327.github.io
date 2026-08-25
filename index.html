@@ -13,6 +13,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ปรับแต่งการ์ดโทนฟ้าพาสเทลโปร่งแสงสไตล์ Glassmorphism */
@@ -22,7 +25,7 @@ body {
     border-radius: 30px;
     box-shadow: 0 15px 35px rgba(160, 195, 230, 0.4);
     max-width: 500px; 
-    margin: 40px auto; 
+    margin: 0 auto; 
     padding: 40px 30px;
     border: 2px solid #b3d1ff;
     position: relative;
@@ -34,15 +37,35 @@ body {
     transform: translateY(-5px);
 }
 
+/* สไตล์สำหรับรูปโปรไฟล์ (กรอบวงกลม) */
+.profile-img-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px auto; /* จัดกึ่งกลาง และเว้นระยะด้านล่าง */
+    border: 5px solid white; /* เพิ่มเส้นขอบขาวดูนุ่มนวล */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* เพิ่มเงาเล็กน้อย */
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปเต็มกรอบโดยไม่เสียสัดส่วน */
+}
+
 h1 { 
     color: #4a86e8; /* หัวข้อสีฟ้าพาสเทลสดใส */
     margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 28px;
 }
 
 p { 
     font-size: 18px; 
     line-height: 1.6; 
     color: #5c768d;
+    margin: 10px 0;
 }
 
 /* ออกแบบปุ่มกดโทนฟ้าพาสเทล */
@@ -55,7 +78,7 @@ p {
     border-radius: 25px;
     font-weight: bold;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 25px;
     box-shadow: 0 4px 15px rgba(130, 177, 255, 0.4);
     transition: all 0.3s ease;
 }
@@ -71,12 +94,19 @@ p {
 <body>
 
 <div class="card">
-  <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
-  <p>สวัสดีค่าาา! ฉันชื่อ <strong>พีรดา (Perada)</strong></p>
-  <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-  <p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
-  
-  <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน</a>
+    <!-- ส่วนแสดงรูปภาพโปรไฟล์ -->
+    <div class="profile-img-container">
+        <!-- **สำคัญ** ตรงนี้คุณต้องใส่ URL ของรูปภาพที่คุณอัปโหลดไว้ -->
+        <!-- เช่น "https://i.imgur.com/your_image.jpg" หรือชื่อไฟล์ถ้าอยู่ในโฟลเดอร์เดียวกัน -->
+        <img src="https://image_gen_requests.s3.amazonaws.com/uploads/f8b4a0ac-f655-408b-b892-23c2859b8c0c.png" alt="โปรไฟล์ พีรดา" class="profile-img">
+    </div>
+
+    <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
+    <p>สวัสดีค่าาา! ฉันชื่อ <strong>พีรดา (Perada)</strong></p>
+    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
+    <p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
+    
+    <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน</a>
 </div>
 
 </body>
