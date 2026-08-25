@@ -3,73 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>แฟ้มสะสมงานของฉัน</title>
+<title>แฟ้มสะสมงานของฉัน - พีรดา</title>
 
 <style>
-/* 🌟 ฉากหลังสีพาสเทลแบบมีกากเพชรวิบวับเลื่อนประกาย */
+/* 🌊 ฉากหลังโทนสีฟ้าสบายตา ไล่เฉดสีนุ่มนวล */
 body {
-    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-    background-image: url('https://transparenttextures.com'); /* เพิ่มละอองดาวชั้นแรก */
+    background: linear-gradient(135deg, #e6f0fa 0%, #d5e5f7 50%, #c4dbf6 100%);
     text-align: center;
-    padding: 30px;
+    padding: 40px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     min-height: 100vh;
-    color: #333;
-    position: relative;
-    overflow-x: hidden;
-}
-
-/* ❄️ ตัวสร้างเอฟเฟกต์กากเพชรระยิบระยับโปรยปรายทั่วจอ */
-.glitter-particle {
-    position: fixed;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
-    animation: sparkle linear infinite;
-    z-index: 999;
-}
-
-@keyframes sparkle {
-    0% {
-        transform: translateY(-10px) rotate(0deg) scale(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg) scale(1);
-        opacity: 0;
-    }
+    color: #2c3e50;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 750px;
     margin: auto;
-    position: relative;
-    z-index: 10; /* ให้เนื้อหาอยู่เหนือกากเพชร */
 }
 
-/* 🦋 รูปโปรไฟล์วงกลมแบบมีขอบออร่าเรืองแสงและกากเพชรฟุ้งๆ */
+/* 🔹 รูปโปรไฟล์วงกลม กรอบขาวซ้อนเงาสีฟ้าละมุน */
 .profile {
-    width: 180px;
-    height: 180px;
-    border: 4px solid white;
+    width: 170px;
+    height: 170px;
+    border: 4px solid #ffffff;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
-    background: rgba(255, 255, 255, 0.6);
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 25px rgba(179, 197, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(179, 197, 255, 0.4); 
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 25px rgba(52, 120, 196, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile:hover {
-    transform: scale(1.05) rotate(3deg); /* แอบเอียงน่ารักๆ ตอนชี้ */
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(52, 120, 196, 0.3);
 }
 
 .profile img {
@@ -79,89 +50,92 @@ body {
 }
 
 h1 {
-    color: #4A90E2;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 4px rgba(179, 197, 255, 0.5);
+    color: #2b5b84;
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-p {
-    color: #5D6D7E;
-    font-size: 17px;
+.subtitle {
+    color: #4a779d;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
 }
 
-/* ✨ การ์ดกระจกใสละมุน (Glassmorphism) วิบวับ */
+/* ❄️ การ์ดผลงานแบบกระจกใส (Glassmorphic Card) สะอาดตา */
 .project-card {
-    background: rgba(255, 255, 255, 0.82); 
-    backdrop-filter: blur(12px);
-    padding: 25px;
-    margin: 25px 0;
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    margin-bottom: 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(179, 197, 255, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 24px rgba(44, 95, 141, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     text-align: left;
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(148, 175, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.6);
-    border-color: rgba(179, 197, 255, 0.8);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(44, 95, 141, 0.15);
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .project-card h3 {
-    color: #4A90E2;
+    color: #2b5b84;
     margin-top: 0;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-shadow: 0 0 5px rgba(255,255,255,1);
+    gap: 10px;
+    font-size: 20px;
 }
 
-/* 🖼️ กล่องใส่รูปผลงานแบบโฮโลแกรมนุ่มนวล */
+/* 🖼️ พื้นที่จำลองใส่รูปผลงาน โทนฟ้าพาสเทล */
 .image-box {
     width: 100%;
-    max-width: 450px;
-    height: 250px;
-    border: 2px dashed #B3C5FF;
-    border-radius: 15px;
+    height: 240px;
+    border: 2px dashed #9bc1e6;
+    border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px auto;
-    background: linear-gradient(135deg, rgba(240, 244, 255, 0.8) 0%, rgba(255, 235, 245, 0.6) 100%); /* ไล่สีโฮโลแกรมนิดๆ */
-    color: #7DA2A9;
-    font-weight: bold;
-    box-shadow: inset 0 0 10px rgba(179, 197, 255, 0.2);
+    margin: 15px 0 20px 0;
+    background: rgba(235, 244, 255, 0.6);
+    color: #5b8ab5;
+    font-weight: 600;
+    box-sizing: border-box;
 }
 
-/* ➡️ ปุ่มกลับหน้าแรกเรืองแสงกริตเตอร์ */
+.project-card p {
+    color: #546e7a;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 💙 ปุ่มกลับหน้าแรก โทนสีฟ้าไล่เฉด สบายตา */
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #B3C5FF, #94AFFF, #ffccd5); /* เพิ่มติ่งสีชมพูหวานๆ */
-    background-size: 200% auto;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
     color: white;
-    padding: 12px 35px;
+    padding: 12px 36px;
     text-decoration: none;
     border-radius: 25px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 16px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(179, 197, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
-    transition: all 0.4s ease;
-    animation: gradientShift 3s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    box-shadow: 0 4px 15px rgba(53, 122, 189, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(148, 175, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, #357abd, #285e8e);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(53, 122, 189, 0.4);
 }
 </style>
-
 </head>
 <body>
 
@@ -169,67 +143,34 @@ p {
 
     <!-- รูปโปรไฟล์ -->
     <div class="profile">
-        <img src="Screenshot 2026-06-30 105442.png" alt="รูปโปรไฟล์">
+        <img src="Screenshot 2026-06-30 105442.png" alt="รูปโปรไฟล์ พีรดา">
     </div>
 
-    <h1>✨ แฟ้มสะสมงาน (Portfolio) ✨</h1>
-    <p>💖 นางสาวพีรดา จั่นวิลัย ชื่อเล่น แพง 💖</p>
+    <h1>แฟ้มสะสมผลงาน (Portfolio)</h1>
+    <p class="subtitle">นางสาวพีรดา จั่นวิลัย (แพง)</p>
 
     <!-- กล่องผลงานที่ 1 -->
     <div class="project-card">
         <h3>💻 1. โครงงานวิทยาศาสตร์การคำนวณ</h3>
         <div class="image-box">
-            🔮 [รอใส่รูปภาพผลงานสุดเจ๋ง]
+            🖼️ [ใส่รูปภาพผลงานหรือภาพบรรยากาศการทำโครงงาน]
         </div>
-        <p>รายละเอียดผลงาน: พิมพ์อธิบายสิ่งที่คุณทำในโครงงานนี้ได้เลยค่ะ เช่น เป็นระบบเกี่ยวกับอะไร ใช้ภาษาอะไรเขียนบ้าง...</p>
+        <p>รายละเอียดผลงาน: อธิบายภาพรวมของโครงงาน เทคโนโลยีหรือภาษาคอมพิวเตอร์ที่ใช้ รวมถึงหน้าที่ความรับผิดชอบในงานนี้...</p>
     </div>
 
     <!-- กล่องผลงานที่ 2 -->
     <div class="project-card">
-        <h3>🏆 2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
+        <h3>🏆 2. กิจกรรมและเกียรติบัตร</h3>
         <div class="image-box">
-            💎 [รอใส่รูปภาพเกียรติบัตรหรือรูปกิจกรรม]
+            📜 [ใส่รูปภาพเกียรติบัตรหรือรูปภาพการเข้าร่วมกิจกรรม]
         </div>
-        <p>รายละเอียดกิจกรรม: พิมพ์อธิบายความประทับใจ หรือรางวัลที่ได้รับจากกิจกรรมนี้ตรงนี้ได้เลยค่ะ...</p>
+        <p>รายละเอียดกิจกรรม: อธิบายรายละเอียดกิจกรรม รางวัลที่ได้รับ หรือทักษะและความรู้ที่ได้รับจากการเข้าร่วมกิจกรรมนี้...</p>
     </div>
 
     <!-- ปุ่มกลับ -->
-    <a href="index.html" class="btn">✨ กลับหน้าแรก ✨</a>
+    <a href="index.html" class="btn">กลับหน้าแรก</a>
 
 </div>
-
-<!-- 💡 Script พิเศษสำหรับเสกเม็ดกากเพชร (Glitter) ให้ตกลงมาเรื่อยๆ แบบสุ่มขนาด -->
-<script>
-function createGlitter() {
-    const body = document.body;
-    const particle = document.createElement('div');
-    particle.classList.add('glitter-particle');
-    
-    // สุ่มตำแหน่งแกน X และขนาดของกากเพชร
-    const randomX = Math.random() * window.innerWidth;
-    const randomSize = Math.random() * 6 + 2; // ขนาด 2px ถึง 8px
-    const randomDuration = Math.random() * 4 + 3; // ความเร็ว 3 ถึง 7 วินาที
-    
-    particle.style.left = randomX + 'px';
-    particle.style.width = randomSize + 'px';
-    particle.style.height = randomSize + 'px';
-    particle.style.animationDuration = randomDuration + 's';
-    
-    // สุ่มสีกริตเตอร์ (ขาว, ฟ้าพาสเทล, ชมพูพาสเทล)
-    const colors = ['#ffffff', '#e0f2fe', '#fce7f3', '#fffbeb'];
-    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-    
-    body.appendChild(particle);
-    
-    // ลบเม็ดกากเพชรออกเมื่อตกสุดจอเพื่อไม่ให้เว็บอืด
-    setTimeout(() => {
-        particle.remove();
-    }, randomDuration * 1000);
-}
-
-// สร้างเม็ดกากเพชรทุกๆ 200 มิลลิวินาที
-setInterval(createGlitter, 200);
-</script>
 
 </body>
 </html>
