@@ -4,33 +4,41 @@
 <meta charset="UTF-8">
 <title>หน้าแนะนำตัวของฉัน</title>
 <style>
-/* ตั้งค่าพื้นหลังเป็นสีฟ้าพาสเทล และใส่ฝูงผีเสื้อสีขาวบินกระจายทั่วจอ */
+/* ตั้งค่าพื้นหลังเป็นสีฟ้าพาสเทลไล่เฉดสี และใส่เอฟเฟกต์ประกายดาวฟรุ้งฟริ้ง */
 body {
-    background-color: #D6E4F0; 
-    background-image: url('https://picmix.com');
-    background-size: 180px; /* ปรับขนาดของฝูงผีเสื้อ */
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    background-image: url('https://transparenttextures.com'); /* เพิ่มประกายดาวระยิบระยับทั่วจอ */
     color: #333;
     text-align: center; 
     padding: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    min-height: 100vh;
 }
 
-/* ปรับแต่งกล่องการ์ดให้ละมุนและมีผีเสื้อบินประดับมุม */
+/* ปรับแต่งกล่องการ์ดให้ละมุน มีความฟรุ้งฟริ้งแบบกระจกเงา (Glassmorphism) และขอบเรืองแสง */
 .card {
-    background: rgba(255, 255, 255, 0.92); /* ขาวละมุนแบบโปร่งแสงนิดๆ ให้เห็นผีเสื้อด้านหลัง */
+    background: rgba(255, 255, 255, 0.85); /* ขาวละมุนแบบโปร่งแสงนิดๆ */
+    backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกเบลอสุดหรูด้านหลัง */
     border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(179, 197, 255, 0.4); /* เงาสีฟ้าพาสเทล */
+    box-shadow: 0 15px 35px rgba(179, 197, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.8); /* เงาฟรุ้งฟริ้งเรืองแสง */
     max-width: 500px; 
     margin: 40px auto; 
     padding: 40px 30px;
-    border: 2px solid #B3C5FF; /* เส้นขอบสีฟ้าพาสเทล */
+    border: 2px solid rgba(179, 197, 255, 0.7); /* เส้นขอบฟ้าพาสเทลนุ่มๆ */
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* ลูกเล่นให้การ์ดลอยขึ้นเบาๆ เวลาเอาเมาส์ไปวาง */
+.card:hover {
+    transform: translateY(-5px);
 }
 
 h1 { 
     color: #4A90E2; /* หัวข้อสีฟ้าเข้มเข้าธีม */
     margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* เพิ่มมิติข้อความ */
 }
 
 p { 
@@ -39,10 +47,10 @@ p {
     color: #5D6D7E;
 }
 
-/* ออกแบบปุ่มกด "แฟ้มสะสมผลงาน" ให้เป็นสีฟ้าพาสเทลฟรุ้งฟริ้ง */
+/* ออกแบบปุ่มกด "แฟ้มสะสมผลงาน" ให้เป็นสีฟ้าพาสเทลฟรุ้งฟริ้งระยิบระยับ */
 .btn {
     display: inline-block;
-    background-color: #B3C5FF;
+    background: linear-gradient(45deg, #B3C5FF, #94AFFF); /* ไล่เฉดสีปุ่มให้ดูแพง */
     color: white;
     padding: 12px 30px;
     text-decoration: none;
@@ -50,23 +58,23 @@ p {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(179, 197, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(179, 197, 255, 0.5);
     transition: all 0.3s ease;
 }
 
-/* ลูกเล่นเวลาเอาเมาส์ไปชี้ที่ปุ่ม */
+/* ลูกเล่นเรืองแสงกระพริบเวลาเอาเมาส์ไปชี้ที่ปุ่ม */
 .btn:hover {
-    background-color: #94AFFF;
+    background: linear-gradient(45deg, #94AFFF, #B3C5FF);
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(148, 175, 255, 0.6);
+    box-shadow: 0 8px 20px rgba(148, 175, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
 }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <!-- ไอคอนผีเสื้อพิกเซลบินดุ๊กดิ๊กด้านบนชื่อ -->
-  <img src="https://tenor.com" width="50" style="margin-bottom: 10px;" />
+  <!-- ไอคอนผีเสื้อพิกเซลบินดุ๊กดิ๊กด้านบนชื่อ (อัปเดตลิงก์ไอคอนเคลื่อนไหวให้แล้ว) -->
+  <img src="https://openmoji.org" width="60" style="margin-bottom: 10px; animation: float 3s ease-in-out infinite;" />
   
   <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
   <p>สวัสดีค่าาา! ฉันชื่อ <strong>พีรดา (Perada)</strong></p>
@@ -75,6 +83,18 @@ p {
   
   <a href="portfolio.html" class="btn">🦋 แฟ้มสะสมผลงาน</a>
 </div>
+
+<script>
+// ลูกเล่นเสริม: แอนิเมชันทำให้ผีเสื้อลอยขึ้นลงนุ่มๆ
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}`;
+document.head.appendChild(style);
+</script>
 
 </body>
 </html>
