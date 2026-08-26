@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>หน้าแนะนำตัวของฉัน</title>
 <style>
-/* ตั้งค่าพื้นหลังเป็นสีฟ้าพาสเทลไล่เฉดสีแบบนุ่มนวล (ไร้รูปภาพ) */
+/* ตั้งค่าพื้นหลังเป็นสีชมพูพาสเทลไล่เฉดสีแบบนุ่มนวล สไตล์จุฬาฯ (ไร้รูปภาพ) */
 body {
-    background: linear-gradient(135deg, #e6f2ff 0%, #cce0ff 100%);
+    background: linear-gradient(135deg, #fff0f6 0%, #ffd6e8 50%, #ffc2dd 100%);
     color: #333;
     text-align: center; 
     padding: 50px;
@@ -16,19 +16,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* ปรับแต่งการ์ดโทนฟ้าพาสเทลโปร่งแสงสไตล์ Glassmorphism */
+/* จุดกระจายเล็กๆ ให้ดูน่ารักฟุ้งๆ แบบไม่ต้องใช้รูปภาพ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, #ffffffaa 3px, transparent 3px),
+        radial-gradient(circle, #ff9ec9aa 4px, transparent 4px);
+    background-size: 120px 120px, 180px 180px;
+    background-position: 0 0, 60px 90px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ปรับแต่งการ์ดโทนชมพูพาสเทลโปร่งแสงสไตล์ Glassmorphism */
 .card {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(160, 195, 230, 0.4);
+    box-shadow: 0 15px 35px rgba(255, 150, 200, 0.45);
     max-width: 500px; 
     margin: 0 auto; 
     padding: 40px 30px;
-    border: 2px solid #b3d1ff;
+    border: 2px solid #ffb3d9;
     position: relative;
+    z-index: 1;
     transition: transform 0.3s ease;
 }
 
@@ -37,15 +54,24 @@ body {
     transform: translateY(-5px);
 }
 
+/* ริบบิ้นน่ารักมุมการ์ด */
+.ribbon {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+}
+
 /* สไตล์สำหรับรูปโปรไฟล์ (กรอบวงกลม) */
 .profile-img-container {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 25px auto; /* จัดกึ่งกลาง และเว้นระยะด้านล่าง */
-    border: 5px solid white; /* เพิ่มเส้นขอบขาวดูนุ่มนวล */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* เพิ่มเงาเล็กน้อย */
+    margin: 15px auto 25px auto; /* จัดกึ่งกลาง และเว้นระยะด้านล่าง */
+    border: 5px solid #ffe0ef; /* เพิ่มเส้นขอบชมพูอ่อนดูนุ่มนวล */
+    box-shadow: 0 5px 15px rgba(255, 140, 190, 0.35); /* เพิ่มเงาเล็กน้อย */
 }
 
 .profile-img {
@@ -55,7 +81,7 @@ body {
 }
 
 h1 { 
-    color: #4a86e8; /* หัวข้อสีฟ้าพาสเทลสดใส */
+    color: #e6398f; /* หัวข้อสีชมพูจุฬาฯ สดใส */
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 28px;
@@ -64,14 +90,14 @@ h1 {
 p { 
     font-size: 18px; 
     line-height: 1.6; 
-    color: #5c768d;
+    color: #8a5c73;
     margin: 10px 0;
 }
 
-/* ออกแบบปุ่มกดโทนฟ้าพาสเทล */
+/* ออกแบบปุ่มกดโทนชมพูพาสเทล */
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #82b1ff, #a4c2f4);
+    background: linear-gradient(45deg, #ff8fc2, #ffb3d9);
     color: white;
     padding: 12px 30px;
     text-decoration: none;
@@ -79,33 +105,35 @@ p {
     font-weight: bold;
     font-size: 16px;
     margin-top: 25px;
-    box-shadow: 0 4px 15px rgba(130, 177, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 130, 190, 0.45);
     transition: all 0.3s ease;
 }
 
 /* ลูกเล่นเปลี่ยนเฉดสีเมื่อชี้ปุ่ม */
 .btn:hover {
-    background: linear-gradient(45deg, #a4c2f4, #82b1ff);
+    background: linear-gradient(45deg, #ffb3d9, #ff8fc2);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(130, 177, 255, 0.6);
+    box-shadow: 0 8px 20px rgba(255, 130, 190, 0.65);
 }
 </style>
 </head>
 <body>
 
 <div class="card">
+    <div class="ribbon">🎀</div>
+
     <!-- ส่วนแสดงรูปภาพโปรไฟล์ -->
     <div class="profile-img-container">
         <!-- นำรูปภาพของคุณใส่ใน src -->
         <img src="18.png" alt="โปรไฟล์ พีรดา" class="profile-img">
     </div>
 
-    <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
+    <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 💗</h1>
     <p>สวัสดีค่าาา! ฉันชื่อ <strong>พีรดา (Perada)</strong></p>
-    <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
+    <p>ขณะนี้กำลังศึกษา/สนใจด้าน การบัญชี (Accounting) 🌸</p>
     <p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
     
-    <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน</a>
+    <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน ✨</a>
 </div>
 
 </body>
