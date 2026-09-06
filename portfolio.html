@@ -377,6 +377,95 @@ body{
   margin:0;
 }
 
+/* ---- ประวัติการศึกษา ---- */
+.edu-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin:14px 0 18px;
+}
+
+.edu-item{
+  background:var(--pink-pale);
+  border:1.5px solid var(--pink-soft);
+  border-radius:14px;
+  padding:14px 18px 14px 24px;
+  position:relative;
+}
+
+.edu-item::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  top:19px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--pink-hot);
+}
+
+.edu-level{
+  display:inline-block;
+  font-weight:600;
+  color:var(--pink-deep);
+  font-size:14.5px;
+  margin-bottom:4px;
+}
+
+.edu-item p{
+  margin:0;
+  font-size:15px;
+  color:#6d4a5e;
+  line-height:1.6;
+}
+
+.edu-goal{
+  background:#F6F1FF;
+  border:1.5px solid var(--lavender);
+  border-radius:14px;
+  padding:14px 18px;
+}
+
+.goal-label{
+  display:inline-block;
+  font-weight:600;
+  color:#6b46b3;
+  font-size:14.5px;
+  margin-bottom:4px;
+}
+
+.edu-goal p{
+  margin:0;
+  font-size:15px;
+  color:#6d4a5e;
+  line-height:1.6;
+}
+
+/* ---- กิจกรรมที่เคยเข้าร่วม ---- */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
+  gap:16px;
+  margin-top:14px;
+}
+
+.cert-item{
+  text-align:center;
+}
+
+.image-box.small{
+  height:150px;
+  font-size:14px;
+  margin:0;
+}
+
+.cert-caption{
+  margin-top:8px !important;
+  font-size:13.5px !important;
+  color:var(--pink-deep) !important;
+  font-weight:500;
+}
+
 /* ---- ปุ่มกลับ ---- */
 .btn-wrap{ position:relative; display:inline-block; }
 .btn-wrap .deco{ position:absolute; font-size:18px; top:-10px; animation: wiggle 3s ease-in-out infinite; }
@@ -512,28 +601,53 @@ body{
         <p class="greet">ยินดีต้อนรับสู่แฟ้มสะสมผลงานของฉันนะคะ 🌸💕</p>
     </div>
 
-    <!-- กล่องผลงานที่ 1 -->
+    <!-- ประวัติการศึกษา -->
     <div class="project-card tilt-l">
-        <span class="badge">1</span>
-        <div class="tape"></div>
-        <div class="sticker heart corner-br">💗</div>
-        <h3>💻 โครงงานวิทยาศาสตร์การคำนวณ</h3>
-        <div class="image-box">
-            🖼️ [ใส่รูปภาพผลงานหรือภาพบรรยากาศการทำโครงงาน]
-        </div>
-        <p>รายละเอียดผลงาน: อธิบายภาพรวมของโครงงาน เทคโนโลยีหรือภาษาคอมพิวเตอร์ที่ใช้ รวมถึงหน้าที่ความรับผิดชอบในงานนี้...</p>
-    </div>
-
-    <!-- กล่องผลงานที่ 2 -->
-    <div class="project-card tilt-r">
-        <span class="badge">2</span>
+        <span class="badge">🎓</span>
         <div class="tape"></div>
         <div class="sticker sparkle corner-br">✨</div>
-        <h3>🏆 กิจกรรมและเกียรติบัตร</h3>
-        <div class="image-box">
-            📜 [ใส่รูปภาพเกียรติบัตรหรือรูปภาพการเข้าร่วมกิจกรรม]
+        <h3>📚 ประวัติการศึกษา</h3>
+        <div class="edu-list">
+            <div class="edu-item">
+                <span class="edu-level">มัธยมศึกษาตอนต้น</span>
+                <p>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"<br>แผนการเรียน MSEP</p>
+            </div>
+            <div class="edu-item">
+                <span class="edu-level">มัธยมศึกษาตอนปลาย</span>
+                <p>โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์<br>แผนการเรียน Gifted Program</p>
+            </div>
         </div>
-        <p>รายละเอียดกิจกรรม: อธิบายรายละเอียดกิจกรรม รางวัลที่ได้รับ หรือทักษะและความรู้ที่ได้รับจากการเข้าร่วมกิจกรรมนี้...</p>
+        <div class="edu-goal">
+            <span class="goal-label">🎯 สาขาที่สนใจศึกษาต่อ</span>
+            <p>คณะพาณิชยศาสตร์และการบัญชี สาขาบัญชีบัณฑิต</p>
+        </div>
+    </div>
+
+
+    <!-- กล่องผลงาน -->
+    <div class="project-card tilt-r">
+        <span class="badge">3</span>
+        <div class="tape"></div>
+        <div class="sticker heart corner-br">💗</div>
+        <h3>🏅 กิจกรรมที่เคยเข้าร่วม</h3>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <div class="image-box small">📜 [ใส่รูปเกียรติบัตร]</div>
+                <p class="cert-caption">ชื่อกิจกรรม / รางวัลที่ได้รับ</p>
+            </div>
+            <div class="cert-item">
+                <div class="image-box small">📜 [ใส่รูปเกียรติบัตร]</div>
+                <p class="cert-caption">ชื่อกิจกรรม / รางวัลที่ได้รับ</p>
+            </div>
+            <div class="cert-item">
+                <div class="image-box small">📜 [ใส่รูปเกียรติบัตร]</div>
+                <p class="cert-caption">ชื่อกิจกรรม / รางวัลที่ได้รับ</p>
+            </div>
+            <div class="cert-item">
+                <div class="image-box small">📜 [ใส่รูปเกียรติบัตร]</div>
+                <p class="cert-caption">ชื่อกิจกรรม / รางวัลที่ได้รับ</p>
+            </div>
+        </div>
     </div>
 
     <!-- ปุ่มกลับ -->
