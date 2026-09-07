@@ -217,9 +217,11 @@
     background:
       repeating-linear-gradient(to bottom, var(--paper-alt) 0 1px, transparent 1px 28px),
       var(--paper);
-    display:flex;align-items:center;justify-content:center;color:var(--blue-light);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+    color:var(--blue);text-align:center;
   }
-  .activity-img svg{width:26px;height:26px;}
+  .activity-img svg{width:24px;height:24px;opacity:.7;}
+  .activity-img span{font-size:.7rem;line-height:1.5;color:var(--blue);}
   .activity-body{padding:1.1rem 1.2rem 1.3rem;}
   .activity-year{font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:.4rem;}
   .activity-title{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:.5rem;}
@@ -296,26 +298,24 @@
           <h1 class="cover-title">PORTFOLIO</h1>
           <p class="cover-subtitle">แฟ้มสะสมผลงาน · สายบัญชี</p>
 
-          <h2 class="cover-name">[ชื่อ-นามสกุล]</h2>
-          <p class="cover-role">ผู้สมัครเข้าศึกษาต่อคณะบัญชี / บริหารธุรกิจ</p>
+          <h2 class="cover-name">[น.ส.พีรดา จั่นวิลัย]</h2>
+          <p class="cover-role">สนใจศึกษาต่อคณะบัญชี </p>
 
           <p class="cover-desc">
-            แฟ้มสะสมผลงานฉบับนี้รวบรวมประวัติการศึกษา ประวัติส่วนตัว กิจกรรมด้านบัญชีและธุรกิจ
-            ตลอดจนความมุ่งมั่นในการเดินสู่เส้นทางวิชาชีพบัญชี เพื่อประกอบการพิจารณาเข้าศึกษาต่อ
+            แฟ้มสะสมผลงานฉบับนี้รวบรวมประวัติการศึกษา ประวัติส่วนตัว กิจกรรมและเพื่อประกอบการพิจารณาเข้าศึกษาต่อ
           </p>
 
           <p class="cover-quote">
-            “ตัวเลขทุกตัวมีเรื่องราวของมันเสมอ หน้าที่ของนักบัญชีคือทำให้เรื่องราวนั้น
-            ถูกต้อง โปร่งใส และตรงไปตรงมา”
+            “Consistency is key”
           </p>
 
           <p class="cover-status">REC. NO. 2569-XXX · STATUS: FOR REVIEW</p>
         </div>
 
-        <!-- แทนที่กล่องนี้ด้วย <img src="รูปโปรไฟล์.jpg" alt="รูปโปรไฟล์" style="width:100%;aspect-ratio:3/4;object-fit:cover;"> -->
+        <!-- แทนที่กล่องนี้ด้วย <img src="18.png.jpg" alt="18.png" style="width:100%;aspect-ratio:3/4;object-fit:cover;"> -->
         <div class="photo-box">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.3"/><path d="M8 6l1.2-2h5.6L16 6"/></svg>
-          <span>แนบรูปโปรไฟล์<br>ที่นี่</span>
+          <span>แนบรูปโปรไฟล์<18.png>ที่นี่</span>
         </div>
       </div>
     </section>
@@ -333,14 +333,13 @@
               <tr><th>ระดับการศึกษา</th><th>สถานศึกษา</th><th>เกรดเฉลี่ย</th></tr>
             </thead>
             <tbody>
-              <tr><td>มัธยมศึกษาตอนปลาย</td><td>[ชื่อโรงเรียน]</td><td>[X.XX]</td></tr>
-              <tr><td>มัธยมศึกษาตอนต้น</td><td>[ชื่อโรงเรียน]</td><td>[X.XX]</td></tr>
-              <tr><td>ประถมศึกษา</td><td>[ชื่อโรงเรียน]</td><td>[X.XX]</td></tr>
+              <tr><td>มัธยมศึกษาตอนปลาย</td><td>[บ้านบึง"อุตสาหกรรมนุเคราะห์"]</td><td>[3.77]</td></tr>
+              <tr><td>มัธยมศึกษาตอนต้น</td><td>[บ้านบีงอุตสาหกรรมนัเคราะห์]</td><td>[3.87]</td></tr>
             </tbody>
           </table>
         </div>
 
-        <p class="plan-line"><b>แผนการเรียน</b> &nbsp; [ศิลป์ - คำนวณ]</p>
+        <p class="plan-line"><b>แผนการเรียน</b> &nbsp; [วิทย์-คณิต]</p>
       </div>
     </section>
 
@@ -355,24 +354,21 @@
           <!-- แทนที่กล่องนี้ด้วย <img src="รูปติดบัตร.jpg" alt="รูปติดบัตร" style="width:100%;aspect-ratio:3/4;object-fit:cover;"> -->
           <div class="id-photo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.3"/><path d="M8 6l1.2-2h5.6L16 6"/></svg>
-            <span>รูปติดบัตร</span>
+            <span>แนบรูปติดบัตร<Screenshot 2026-06-30 105442.png>ที่นี่</span>
           </div>
 
           <div>
             <div class="field-grid">
-              <div class="field"><label>ชื่อจริง-นามสกุล</label><div>[ชื่อ-นามสกุล]</div></div>
-              <div class="field"><label>ชื่อเล่น</label><div>[ชื่อเล่น]</div></div>
-              <div class="field"><label>วันเกิด</label><div>[DD|MM|YYYY]</div></div>
-              <div class="field"><label>ที่อยู่</label><div>[จังหวัด]</div></div>
-              <div class="field"><label>email</label><div>[email@example.com]</div></div>
-              <div class="field"><label>เบอร์โทรศัพท์</label><div>[0XXXXXXXXX]</div></div>
+              <div class="field"><label>ชื่อนามสกกุล</label><div>[น.ส.พีรดา จั่นวิลัย]</div></div>
+              <div class="field"><label>ชื่อเล่น</label><div>[แพง]</div></div>
+              <div class="field"><label>วันเกิด</label><div>[10|09|2008]</div></div>
+              <div class="field"><label>ที่อยู่</label><div>[ชลบุรี]</div></div>
+              <div class="field"><label>email</label><div>[perada2008910@gmail.com]</div></div>
+              <div class="field"><label>เบอร์โทรศัพท์</label><div>[0650533126]</div></div>
             </div>
 
             <p class="statement">
-              “ด้วยความชื่นชอบตัวเลขและความเป็นระเบียบเป็นทุนเดิม ผสานกับความสนใจในการบริหารธุรกิจ
-              ผลักดันให้ผมเข้าร่วมกิจกรรมด้านบัญชีและการเงินอย่างต่อเนื่อง ประสบการณ์เหล่านี้ทำให้ผมเข้าใจว่า
-              บัญชีไม่ใช่เพียงการบันทึกตัวเลข แต่คือเครื่องมือที่ทำให้ธุรกิจเดินหน้าอย่างโปร่งใสและมั่นคง
-              ผมจึงตั้งใจศึกษาต่อด้านบัญชีเพื่อนำความรู้ไปสร้างประโยชน์แก่องค์กรและสังคมในอนาคต” — [แก้ไขข้อความนี้เป็นเรื่องราวของคุณเอง]
+              “ฉันสนใจเรียนบัญชี เพราะตั้งแต่เด็กได้เห็นคุณแม่ทำงานด้านบัญชี ทำให้ฉันคุ้นเคยและเริ่มสนใจงานที่เกี่ยวกับตัวเลขและการวิเคราะห์ จึงอยากเรียนรู้ด้านบัญชีให้ลึกซึ้งและนำไปต่อยอดเป็นอาชีพในอนาคต” — [แก้ไขข้อความนี้เป็นเรื่องราวของคุณเอง]
             </p>
           </div>
         </div>
@@ -386,9 +382,10 @@
         <div class="section-tag">Section 04</div>
         <h2 class="section-title">กิจกรรมที่เข้าร่วม</h2>
 
+        <!-- ในแต่ละการ์ด แทนที่ .activity-img ด้วย <img src="รูปกิจกรรม1.jpg" alt="..." style="width:100%;aspect-ratio:16/10;object-fit:cover;"> -->
         <div class="activity-grid">
           <div class="activity-card">
-            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg></div>
+            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg><span>แนบรูปกิจกรรม<br>ที่นี่</span></div>
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">ค่ายบัญชีเยาวชน คณะพาณิชยศาสตร์และการบัญชี [ชื่อมหาวิทยาลัย]</div>
@@ -397,7 +394,7 @@
           </div>
 
           <div class="activity-card">
-            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg></div>
+            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg><span>แนบรูปกิจกรรม<br>ที่นี่</span></div>
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">แข่งขันตอบปัญหาบัญชีและการเงินระดับมัธยมศึกษา</div>
@@ -406,7 +403,7 @@
           </div>
 
           <div class="activity-card">
-            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg></div>
+            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg><span>แนบรูปกิจกรรม<br>ที่นี่</span></div>
             <div class="activity-body">
               <div class="activity-year">2568</div>
               <div class="activity-title">โครงการบริษัทจำลอง (Mini Company) ระดับโรงเรียน</div>
@@ -415,7 +412,7 @@
           </div>
 
           <div class="activity-card">
-            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg></div>
+            <div class="activity-img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 4v5"/></svg><span>แนบรูปกิจกรรม<br>ที่นี่</span></div>
             <div class="activity-body">
               <div class="activity-year">2569</div>
               <div class="activity-title">ประกวดแผนธุรกิจ Young Financial Planner</div>
