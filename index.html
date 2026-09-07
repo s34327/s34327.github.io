@@ -109,6 +109,53 @@ p {
     margin: 10px 0;
 }
 
+/* ---------- ส่วนสารบัญพอร์ต: หัวข้อที่ควรมีในพอร์ตโฟลิโอ ---------- */
+.map-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e6398f;
+    margin: 24px 0 12px;
+    letter-spacing: .03em;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+}
+
+.topic-chip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: linear-gradient(135deg, #fff5fa, #ffe6f2);
+    border: 1.5px solid #ffcae3;
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #8a5c73;
+    line-height: 1.45;
+}
+
+.topic-chip .num {
+    font-weight: 800;
+    color: #ff8fc2;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.topic-chip b {
+    display: block;
+    color: #e6398f;
+    font-size: 13.5px;
+    margin-bottom: 1px;
+}
+
+@media (max-width: 380px) {
+    .topic-grid { grid-template-columns: 1fr; }
+}
+
 /* ออกแบบปุ่มกดโทนชมพูพาสเทล */
 .btn {
     display: inline-block;
@@ -162,9 +209,17 @@ p {
     </div>
 
     <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 💗</h1>
-    <p>สวัสดีค่าาา! ฉันชื่อ <strong>พีรดา (Perada)</strong></p>
-    <p>ขณะนี้กำลังศึกษา/สนใจด้าน การบัญชี (Accounting) 🌸</p>
-    <p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
+    <p>สวัสดีค่าาา! ฉันชื่อ <strong> แพง (Perada)</strong></p>
+    <p>ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6  🌸</p>
+    <p>นี่คือเว็ปสะสมผลงานของฉัน</p>
+
+    <div class="map-title">📌 ในพอร์ตของฉันมีอะไรบ้าง</div>
+    <div class="topic-grid">
+        <div class="topic-chip"><span class="num">01</span><div><b>ประวัติการศึกษา</b>เกรดเฉลี่ย & แผนการเรียน</div></div>
+        <div class="topic-chip"><span class="num">02</span><div><b>ประวัติส่วนตัว</b>ข้อมูลติดต่อ & แรงบันดาลใจ</div></div>
+        <div class="topic-chip"><span class="num">03</span><div><b>กิจกรรม/ผลงาน</b>ค่าย การแข่งขัน โครงการ</div></div>
+        <div class="topic-chip"><span class="num">04</span><div><b>เป้าหมายอนาคต</b>คณะที่สนใจ & อาชีพในฝัน</div></div>
+    </div>
     
     <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน ✨ <span class="arrow">→</span></a>
 </div>
