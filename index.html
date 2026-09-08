@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>หน้าแนะนำตัวของฉัน</title>
 <style>
-/* ตั้งค่าพื้นหลังเป็นสีชมพูพาสเทลไล่เฉดสีแบบนุ่มนวล สไตล์จุฬาฯ (ไร้รูปภาพ) */
+/* ตั้งค่าพื้นหลังไล่เฉดสีชมพู-เขียวมิ้นต์พาสเทลแบบนุ่มนวล (ไร้รูปภาพ) */
 body {
-    background: linear-gradient(135deg, #fff0f6 0%, #ffd6e8 50%, #ffc2dd 100%);
+    background: linear-gradient(135deg, #fff0f6 0%, #ffd6e8 32%, #eafbf3 68%, #c9f2dc 100%);
     color: #333;
     text-align: center; 
     padding: 50px;
@@ -30,7 +30,7 @@ body::before {
         radial-gradient(circle, #fff0f8 1px, transparent 1px),
         radial-gradient(circle, #ff9ec9 2px, transparent 2px),
         radial-gradient(circle, #ffffff 1px, transparent 1px),
-        radial-gradient(circle, #ffcae3 2.5px, transparent 2.5px);
+        radial-gradient(circle, #a8e8c8 2.5px, transparent 2.5px);
     background-size: 60px 60px, 90px 90px, 140px 140px, 40px 40px, 190px 190px;
     background-position: 0 0, 25px 45px, 70px 15px, 15px 80px, 110px 130px;
     pointer-events: none;
@@ -54,7 +54,7 @@ body::before {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(255, 150, 200, 0.45);
+    box-shadow: 0 15px 35px rgba(255, 150, 200, 0.4), 0 0 0 5px rgba(140, 224, 180, 0.22);
     max-width: 500px; 
     margin: 0 auto; 
     padding: 40px 30px;
@@ -174,7 +174,7 @@ p {
 
 @keyframes btn-glow {
     0%, 100% { box-shadow: 0 4px 15px rgba(255, 130, 190, 0.45); }
-    50%      { box-shadow: 0 6px 26px rgba(255, 110, 180, 0.85), 0 0 22px rgba(255, 190, 225, 0.7); }
+    50%      { box-shadow: 0 6px 26px rgba(255, 110, 180, 0.85), 0 0 22px rgba(140, 224, 180, 0.55); }
 }
 
 /* ลูกศรกระดิกเชิญชวนให้กดต่อ */
@@ -195,17 +195,107 @@ p {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 130, 190, 0.65);
 }
+
+/* ---------- กรอบมุมจอ ชมพู-มิ้นต์สลับกัน ---------- */
+.page-corner {
+    position: fixed;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+.page-corner.tl { top: 12px; left: 12px; border-top: 2px solid #ff8fc2; border-left: 2px solid #ff8fc2; border-radius: 7px 0 0 0; }
+.page-corner.tr { top: 12px; right: 12px; border-top: 2px solid #7bd9a8; border-right: 2px solid #7bd9a8; border-radius: 0 7px 0 0; }
+.page-corner.bl { bottom: 12px; left: 12px; border-bottom: 2px solid #7bd9a8; border-left: 2px solid #7bd9a8; border-radius: 0 0 0 7px; }
+.page-corner.br { bottom: 12px; right: 12px; border-bottom: 2px solid #ff8fc2; border-right: 2px solid #ff8fc2; border-radius: 0 0 7px 0; }
+
+/* ---------- กรอบประรอบการ์ด + ดอกไม้/ใบไม้มุม ---------- */
+.card-frame {
+    position: relative;
+    z-index: 1;
+}
+.card-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border: 2px dashed #8fe0c2;
+    border-radius: 38px;
+    pointer-events: none;
+    z-index: 0;
+}
+.card-corner {
+    position: absolute;
+    font-size: 1.3rem;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(255, 140, 190, 0.35));
+}
+.card-corner.tl { top: -20px; left: -14px; }
+.card-corner.tr { top: -20px; right: -14px; transform: scaleX(-1); }
+.card-corner.bl { bottom: -20px; left: -14px; transform: scaleY(-1); }
+.card-corner.br { bottom: -20px; right: -14px; transform: scale(-1, -1); }
+
+/* ---------- สลับสีชิปหัวข้อ ชมพู/มิ้นต์ ---------- */
+.topic-chip:nth-child(even) {
+    background: linear-gradient(135deg, #f2fdf7, #d9f5e6);
+    border-color: #a8e8c8;
+}
+.topic-chip:nth-child(even) b { color: #2fa06f; }
+.topic-chip:nth-child(even) .num { color: #6bcf9a; }
+
+/* ---------- วงแหวนตกแต่งรอบรูปโปรไฟล์ (ไม่ยุ่งกับ .profile-img-container / .profile-img) ---------- */
+.photo-ring {
+    position: relative;
+    width: 150px;
+    margin: 0 auto;
+}
+.photo-ring::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border: 2px dashed #8fe0c2;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.photo-deco {
+    position: absolute;
+    font-size: 1rem;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 3px rgba(255, 140, 190, 0.3));
+}
+.photo-deco.a { top: -6px; left: -8px; }
+.photo-deco.b { top: -6px; right: -8px; }
+.photo-deco.c { bottom: -2px; left: -8px; }
+.photo-deco.d { bottom: -2px; right: -8px; }
 </style>
 </head>
 <body>
+
+<span class="page-corner tl" aria-hidden="true"></span>
+<span class="page-corner tr" aria-hidden="true"></span>
+<span class="page-corner bl" aria-hidden="true"></span>
+<span class="page-corner br" aria-hidden="true"></span>
+
+<div class="card-frame">
+    <span class="card-corner tl" aria-hidden="true">🌸</span>
+    <span class="card-corner tr" aria-hidden="true">🍃</span>
+    <span class="card-corner bl" aria-hidden="true">🍃</span>
+    <span class="card-corner br" aria-hidden="true">🌸</span>
 
 <div class="card">
     <div class="ribbon">🎀</div>
 
     <!-- ส่วนแสดงรูปภาพโปรไฟล์ -->
-    <div class="profile-img-container">
-        <!-- นำรูปภาพของคุณใส่ใน src -->
-        <img src="18.png" alt="โปรไฟล์ พีรดา" class="profile-img">
+    <div class="photo-ring">
+        <span class="photo-deco a" aria-hidden="true">🌸</span>
+        <span class="photo-deco b" aria-hidden="true">🍃</span>
+        <span class="photo-deco c" aria-hidden="true">🍃</span>
+        <span class="photo-deco d" aria-hidden="true">🌸</span>
+        <div class="profile-img-container">
+            <!-- นำรูปภาพของคุณใส่ใน src -->
+            <img src="18.png" alt="โปรไฟล์ พีรดา" class="profile-img">
+        </div>
     </div>
 
     <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 💗</h1>
@@ -222,6 +312,7 @@ p {
     </div>
     
     <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน ✨ <span class="arrow">→</span></a>
+</div>
 </div>
 
 </body>
