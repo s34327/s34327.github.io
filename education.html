@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>พอร์ตฟอลิโอ | ประวัติการศึกษา</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600;700&family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-overlay" id="pageOverlay" aria-hidden="true">
+    <div class="loading-card">
+      <div class="spinner-ring"></div>
+      <div class="loading-msg">กำลังเปลี่ยนหน้า... 🌸</div>
+    </div>
+  </div>
+
+  <div class="app">
+    <span class="frame-corner tl" aria-hidden="true"></span>
+    <span class="frame-corner tr" aria-hidden="true"></span>
+    <span class="frame-corner bl" aria-hidden="true"></span>
+    <span class="frame-corner br" aria-hidden="true"></span>
+
+    <header class="topbar">
+      <a class="back-link" href="index.html">← หน้าหลัก</a>
+      
+      <nav class="slide-nav">
+        <a href="index.html" class="nav-item">หน้าปก</a>
+        <a href="education.html" class="nav-item active">การศึกษา</a>
+        <a href="profile.html" class="nav-item">ประวัติส่วนตัว</a>
+        <a href="activities.html" class="nav-item">กิจกรรม</a>
+        <a href="interests.html" class="nav-item">ความสนใจ</a>
+      </nav>
+
+      <div class="progress">02 / 05</div>
+    </header>
+
+    <main class="page-container">
+      <section class="slide slide--paper">
+        <span class="sparkle small tw" style="top:14%;left:5%;">📚</span>
+        <span class="sparkle small" style="bottom:10%;right:14%;animation-delay:.8s;">✏️</span>
+        <span class="sparkle small tw" style="top:60%;right:6%;animation-delay:1.2s;">🧮</span>
+        <span class="sparkle small" style="bottom:34%;left:9%;animation-delay:.4s;">🎓</span>
+        <span class="ghost-num">02</span>
+
+        <div class="content-wrap">
+          <div class="section-tag">Section 02</div>
+          <h2 class="section-title"><span class="emoji">📖</span> ประวัติการศึกษา</h2>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>ระดับการศึกษา</th><th>สถานศึกษา</th><th>เกรดเฉลี่ย</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>มัธยมศึกษาตอนปลาย</td><td>บ้านบึง"อุตสาหกรรมนุเคราะห์"</td><td>3.81</td></tr>
+                <tr><td>มัธยมศึกษาตอนต้น</td><td>บ้านบึง"อุตสาหกรรมนุเคราะห์"</td><td>3.87</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="plan-line"><b>แผนการเรียน</b> &nbsp; วิทย์-คณิต</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ลิงก์ถอยกลับไปหน้าหลัก (index.html) และไปหน้าถัดไป (profile.html) -->
+    <div class="nav-controls">
+      <a href="index.html" class="nav-btn" aria-label="สไลด์ก่อนหน้า">←</a>
+      <div class="dots">
+        <a href="index.html" class="dot">1</a>
+        <a href="education.html" class="dot active">2</a>
+        <a href="profile.html" class="dot">3</a>
+        <a href="activities.html" class="dot">4</a>
+        <a href="interests.html" class="dot">5</a>
+      </div>
+      <a href="profile.html" class="nav-btn" aria-label="สไลด์ถัดไป">→</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
