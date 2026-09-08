@@ -4,9 +4,20 @@
 <meta charset="UTF-8">
 <title>หน้าแนะนำตัวของฉัน</title>
 <style>
-/* ตั้งค่าพื้นหลังไล่เฉดสีชมพู-เขียวมิ้นต์พาสเทลแบบนุ่มนวล (ไร้รูปภาพ) */
+:root{
+    /* ===== ธีมสีเขียว-ชมพูพาสเทล (เขียวมิ้นต์ = โทนหลัก, ชมพูกุหลาบ = สีเน้น/ลิงก์) ===== */
+    --mint-main:#2F6B52;     /* เขียวเข้ม ใช้หัวข้อหลัก/โทนหลัก */
+    --mint-mid:#5E8A74;      /* เขียวนวล ใช้ข้อความรอง */
+    --mint-light:#EAF7EE;    /* เขียวมิ้นต์อ่อน ใช้พื้นหลัง/กรอบ */
+    --mint-border:#B9E8CC;   /* เขียวมิ้นต์กลาง ใช้เส้นขอบการ์ด */
+    --pink-accent:#E38AA8;   /* ชมพูกุหลาบ ใช้จุดเน้น/ลิงก์/ปุ่ม */
+    --pink-light:#F4C4D6;    /* ชมพูอ่อน ใช้ไล่เฉด/เงา */
+    --pink-deep:#D98CAF;     /* ชมพูกุหลาบเข้ม ใช้หัวข้อในชิปสีชมพู */
+}
+
+/* ตั้งค่าพื้นหลังไล่เฉดสีเขียวมิ้นต์เป็นหลัก แซมด้วยชมพูพาสเทลเป็นจุดเน้น (ไร้รูปภาพ) */
 body {
-    background: linear-gradient(135deg, #fff0f6 0%, #ffd6e8 32%, #eafbf3 68%, #c9f2dc 100%);
+    background: linear-gradient(135deg, #EAF7EE 0%, #C9F2DC 38%, #FFE6F2 62%, #EAF7EE 100%);
     color: #333;
     text-align: center; 
     padding: 50px;
@@ -27,10 +38,10 @@ body::before {
     inset: -50px;
     background-image:
         radial-gradient(circle, #ffffff 1.5px, transparent 1.5px),
-        radial-gradient(circle, #fff0f8 1px, transparent 1px),
-        radial-gradient(circle, #ff9ec9 2px, transparent 2px),
+        radial-gradient(circle, #f3fdf7 1px, transparent 1px),
+        radial-gradient(circle, #7bd9a8 2px, transparent 2px),
         radial-gradient(circle, #ffffff 1px, transparent 1px),
-        radial-gradient(circle, #a8e8c8 2.5px, transparent 2.5px);
+        radial-gradient(circle, #ff9ec9 2.5px, transparent 2.5px);
     background-size: 60px 60px, 90px 90px, 140px 140px, 40px 40px, 190px 190px;
     background-position: 0 0, 25px 45px, 70px 15px, 15px 80px, 110px 130px;
     pointer-events: none;
@@ -49,16 +60,32 @@ body::before {
     100% { opacity: 0.65; }
 }
 
-/* ปรับแต่งการ์ดโทนชมพูพาสเทลโปร่งแสงสไตล์ Glassmorphism */
+/* ---------- เอฟเฟกต์เปิดหน้า: การ์ดค่อยๆ ปรากฏขึ้นแบบนุ่มนวล ---------- */
+/* หน้านี้มีการ์ดเดียวไม่มีสไลด์ให้เลื่อน จึงใช้จังหวะเดียวตอนโหลดหน้าแทน
+   ให้ความรู้สึกต่อเนื่องกับเอฟเฟกต์เลื่อนสไลด์ในหน้าพอร์ตฟอลิโอ */
+@keyframes reveal-in {
+    0%   { opacity: 0; transform: translateY(18px) scale(.96); filter: blur(6px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+.card-frame {
+    animation: reveal-in .85s cubic-bezier(.22,.9,.32,1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-frame { animation: none; }
+    body::before { animation: none; }
+}
+
+/* ปรับแต่งการ์ดโทนพาสเทลโปร่งแสงสไตล์ Glassmorphism (เขียวมิ้นต์เป็นกรอบหลัก) */
 .card {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    box-shadow: 0 15px 35px rgba(255, 150, 200, 0.4), 0 0 0 5px rgba(140, 224, 180, 0.22);
+    box-shadow: 0 15px 35px rgba(255, 150, 200, 0.35), 0 0 0 5px rgba(47, 107, 82, 0.16);
     max-width: 500px; 
     margin: 0 auto; 
     padding: 40px 30px;
-    border: 2px solid #ffb3d9;
+    border: 2px solid var(--mint-border);
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
@@ -85,8 +112,8 @@ body::before {
     border-radius: 50%;
     overflow: hidden;
     margin: 15px auto 25px auto; /* จัดกึ่งกลาง และเว้นระยะด้านล่าง */
-    border: 5px solid #ffe0ef; /* เพิ่มเส้นขอบชมพูอ่อนดูนุ่มนวล */
-    box-shadow: 0 5px 15px rgba(255, 140, 190, 0.35); /* เพิ่มเงาเล็กน้อย */
+    border: 5px solid var(--mint-light); /* กรอบเขียวมิ้นต์อ่อนดูนุ่มนวล */
+    box-shadow: 0 5px 15px rgba(227, 138, 168, 0.35); /* เงาชมพูอ่อนเป็นจุดเน้น */
 }
 
 .profile-img {
@@ -96,7 +123,7 @@ body::before {
 }
 
 h1 { 
-    color: #e6398f; /* หัวข้อสีชมพูจุฬาฯ สดใส */
+    color: var(--mint-main); /* หัวข้อโทนเขียวมิ้นต์เข้ม (โทนหลัก) */
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 28px;
@@ -105,7 +132,7 @@ h1 {
 p { 
     font-size: 18px; 
     line-height: 1.6; 
-    color: #8a5c73;
+    color: var(--mint-mid);
     margin: 10px 0;
 }
 
@@ -113,7 +140,7 @@ p {
 .map-title {
     font-size: 14px;
     font-weight: 700;
-    color: #e6398f;
+    color: var(--mint-main);
     margin: 24px 0 12px;
     letter-spacing: .03em;
 }
@@ -130,7 +157,7 @@ p {
     align-items: flex-start;
     gap: 8px;
     background: linear-gradient(135deg, #fff5fa, #ffe6f2);
-    border: 1.5px solid #ffcae3;
+    border: 1.5px solid var(--pink-light);
     border-radius: 16px;
     padding: 10px 12px;
     font-size: 13px;
@@ -140,14 +167,14 @@ p {
 
 .topic-chip .num {
     font-weight: 800;
-    color: #ff8fc2;
+    color: var(--pink-accent);
     font-size: 13px;
     flex-shrink: 0;
 }
 
 .topic-chip b {
     display: block;
-    color: #e6398f;
+    color: var(--pink-deep);
     font-size: 13.5px;
     margin-bottom: 1px;
 }
@@ -156,10 +183,10 @@ p {
     .topic-grid { grid-template-columns: 1fr; }
 }
 
-/* ออกแบบปุ่มกดโทนชมพูพาสเทล */
+/* ออกแบบปุ่มกดโทนชมพูพาสเทล (จุดเน้น/ลิงก์หลักของหน้า) */
 .btn {
     display: inline-block;
-    background: linear-gradient(45deg, #ff8fc2, #ffb3d9);
+    background: linear-gradient(45deg, var(--pink-accent), var(--pink-light));
     color: white;
     padding: 12px 30px;
     text-decoration: none;
@@ -167,14 +194,14 @@ p {
     font-weight: bold;
     font-size: 16px;
     margin-top: 25px;
-    box-shadow: 0 4px 15px rgba(255, 130, 190, 0.45);
+    box-shadow: 0 4px 15px rgba(227, 138, 168, 0.45);
     transition: all 0.3s ease;
     animation: btn-glow 2s ease-in-out infinite;
 }
 
 @keyframes btn-glow {
-    0%, 100% { box-shadow: 0 4px 15px rgba(255, 130, 190, 0.45); }
-    50%      { box-shadow: 0 6px 26px rgba(255, 110, 180, 0.85), 0 0 22px rgba(140, 224, 180, 0.55); }
+    0%, 100% { box-shadow: 0 4px 15px rgba(227, 138, 168, 0.45); }
+    50%      { box-shadow: 0 6px 26px rgba(227, 138, 168, 0.8), 0 0 22px rgba(47, 107, 82, 0.4); }
 }
 
 /* ลูกศรกระดิกเชิญชวนให้กดต่อ */
@@ -191,9 +218,9 @@ p {
 
 /* ลูกเล่นเปลี่ยนเฉดสีเมื่อชี้ปุ่ม */
 .btn:hover {
-    background: linear-gradient(45deg, #ffb3d9, #ff8fc2);
+    background: linear-gradient(45deg, var(--pink-light), var(--pink-accent));
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 130, 190, 0.65);
+    box-shadow: 0 8px 20px rgba(227, 138, 168, 0.65);
 }
 
 /* ---------- กรอบมุมจอ ชมพู-มิ้นต์สลับกัน ---------- */
@@ -204,10 +231,10 @@ p {
     height: 20px;
     pointer-events: none;
 }
-.page-corner.tl { top: 12px; left: 12px; border-top: 2px solid #ff8fc2; border-left: 2px solid #ff8fc2; border-radius: 7px 0 0 0; }
-.page-corner.tr { top: 12px; right: 12px; border-top: 2px solid #7bd9a8; border-right: 2px solid #7bd9a8; border-radius: 0 7px 0 0; }
-.page-corner.bl { bottom: 12px; left: 12px; border-bottom: 2px solid #7bd9a8; border-left: 2px solid #7bd9a8; border-radius: 0 0 0 7px; }
-.page-corner.br { bottom: 12px; right: 12px; border-bottom: 2px solid #ff8fc2; border-right: 2px solid #ff8fc2; border-radius: 0 0 7px 0; }
+.page-corner.tl { top: 12px; left: 12px; border-top: 2px solid var(--pink-accent); border-left: 2px solid var(--pink-accent); border-radius: 7px 0 0 0; }
+.page-corner.tr { top: 12px; right: 12px; border-top: 2px solid var(--mint-main); border-right: 2px solid var(--mint-main); border-radius: 0 7px 0 0; }
+.page-corner.bl { bottom: 12px; left: 12px; border-bottom: 2px solid var(--mint-main); border-left: 2px solid var(--mint-main); border-radius: 0 0 0 7px; }
+.page-corner.br { bottom: 12px; right: 12px; border-bottom: 2px solid var(--pink-accent); border-right: 2px solid var(--pink-accent); border-radius: 0 0 7px 0; }
 
 /* ---------- กรอบประรอบการ์ด + ดอกไม้/ใบไม้มุม ---------- */
 .card-frame {
@@ -218,7 +245,7 @@ p {
     content: "";
     position: absolute;
     inset: -14px;
-    border: 2px dashed #8fe0c2;
+    border: 2px dashed var(--mint-border);
     border-radius: 38px;
     pointer-events: none;
     z-index: 0;
@@ -229,7 +256,7 @@ p {
     line-height: 1;
     pointer-events: none;
     z-index: 2;
-    filter: drop-shadow(0 2px 4px rgba(255, 140, 190, 0.35));
+    filter: drop-shadow(0 2px 4px rgba(227, 138, 168, 0.35));
 }
 .card-corner.tl { top: -20px; left: -14px; }
 .card-corner.tr { top: -20px; right: -14px; transform: scaleX(-1); }
@@ -239,9 +266,9 @@ p {
 /* ---------- สลับสีชิปหัวข้อ ชมพู/มิ้นต์ ---------- */
 .topic-chip:nth-child(even) {
     background: linear-gradient(135deg, #f2fdf7, #d9f5e6);
-    border-color: #a8e8c8;
+    border-color: var(--mint-border);
 }
-.topic-chip:nth-child(even) b { color: #2fa06f; }
+.topic-chip:nth-child(even) b { color: var(--mint-main); }
 .topic-chip:nth-child(even) .num { color: #6bcf9a; }
 
 /* ---------- วงแหวนตกแต่งรอบรูปโปรไฟล์ (ไม่ยุ่งกับ .profile-img-container / .profile-img) ---------- */
@@ -254,7 +281,7 @@ p {
     content: "";
     position: absolute;
     inset: -10px;
-    border: 2px dashed #8fe0c2;
+    border: 2px dashed var(--pink-light);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -262,7 +289,7 @@ p {
     position: absolute;
     font-size: 1rem;
     pointer-events: none;
-    filter: drop-shadow(0 2px 3px rgba(255, 140, 190, 0.3));
+    filter: drop-shadow(0 2px 3px rgba(227, 138, 168, 0.3));
 }
 .photo-deco.a { top: -6px; left: -8px; }
 .photo-deco.b { top: -6px; right: -8px; }
