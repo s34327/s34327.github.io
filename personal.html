@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>พอร์ตฟอลิโอ | ประวัติส่วนตัว</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600;700&family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-overlay" id="pageOverlay" aria-hidden="true">
+    <div class="loading-card">
+      <div class="spinner-ring"></div>
+      <div class="loading-msg">กำลังเปลี่ยนหน้า... 🌸</div>
+    </div>
+  </div>
+
+  <div class="app">
+    <span class="frame-corner tl" aria-hidden="true"></span>
+    <span class="frame-corner tr" aria-hidden="true"></span>
+    <span class="frame-corner bl" aria-hidden="true"></span>
+    <span class="frame-corner br" aria-hidden="true"></span>
+
+    <header class="topbar">
+      <a class="back-link" href="index.html">← หน้าหลัก</a>
+      
+      <nav class="slide-nav">
+        <a href="index.html" class="nav-item">หน้าปก</a>
+        <a href="education.html" class="nav-item">การศึกษา</a>
+        <a href="profile.html" class="nav-item active">ประวัติส่วนตัว</a>
+        <a href="activities.html" class="nav-item">กิจกรรม</a>
+        <a href="interests.html" class="nav-item">ความสนใจ</a>
+      </nav>
+
+      <div class="progress">03 / 05</div>
+    </header>
+
+    <main class="page-container">
+      <section class="slide slide--paper">
+        <span class="sparkle small tw" style="top:12%;right:8%;">💌</span>
+        <span class="sparkle small" style="bottom:16%;left:6%;animation-delay:1s;">🌷</span>
+        <span class="sparkle small tw" style="top:56%;left:3%;animation-delay:.7s;">🦋</span>
+        <span class="sparkle small" style="bottom:6%;right:5%;animation-delay:1.4s;">🩷</span>
+        <span class="ghost-num">03</span>
+
+        <div class="content-wrap">
+          <div class="section-tag">Section 03</div>
+          <h2 class="section-title"><span class="emoji">🌸</span> ประวัติส่วนตัว</h2>
+
+          <div class="personal-grid">
+            <div class="frame-wrap" style="max-width:220px;">
+              <span class="corner-deco tl">🌸</span>
+              <span class="corner-deco tr">🌸</span>
+              <span class="corner-deco bl">🌸</span>
+              <span class="corner-deco br">🌸</span>
+              <img src="18.png" alt="รูปติดบัตร" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;box-shadow:0 8px 24px -12px rgba(47,107,82,.3);display:block;">
+            </div>
+
+            <div>
+              <div class="field-grid">
+                <div class="field"><label>ชื่อสกุล</label><div>น.ส.พีรดา จั่นวิลัย</div></div>
+                <div class="field"><label>ชื่อเล่น</label><div>แพง</div></div>
+                <div class="field"><label>วันเกิด</label><div>10|09|2008</div></div>
+                <div class="field"><label>ที่อยู่</label><div>ชลบุรี</div></div>
+                <div class="field"><label>email</label><div>perada2008910@gmail.com</div></div>
+                <div class="field"><label>เบอร์โทรศัพท์</label><div>0650533126</div></div>
+              </div>
+
+              <p class="statement">
+                ฉันสนใจเรียนบัญชีเพราะชอบการทำงานที่เกี่ยวกับตัวเลขและการคิดวิเคราะห์ รู้สึกว่างานบัญชีเป็นงานที่ต้องใช้ความละเอียดและความรับผิดชอบ ซึ่งเป็นสิ่งที่ฉันอยากพัฒนาตัวเองให้มากขึ้น จึงอยากเรียนบัญชีเพื่อทำความเข้าใจด้านนี้อย่างจริงจังและนำไปใช้ในการทำงานในอนาคต
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ลิงก์ถอยกลับไป (education.html) และไปหน้าถัดไป (activities.html) -->
+    <div class="nav-controls">
+      <a href="education.html" class="nav-btn" aria-label="สไลด์ก่อนหน้า">←</a>
+      <div class="dots">
+        <a href="index.html" class="dot">1</a>
+        <a href="education.html" class="dot">2</a>
+        <a href="profile.html" class="dot active">3</a>
+        <a href="activities.html" class="dot">4</a>
+        <a href="interests.html" class="dot">5</a>
+      </div>
+      <a href="activities.html" class="nav-btn" aria-label="สไลด์ถัดไป">→</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
