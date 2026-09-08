@@ -76,6 +76,23 @@ body::before {
     body::before { animation: none; }
 }
 
+/* ---------- เอฟเฟกต์ตอนกดปุ่มไปหน้าถัดไป: การ์ดพุ่งไปข้างหน้าแล้วจางหาย ---------- */
+@keyframes reveal-out {
+    0%   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: translateY(-10px) scale(1.06); filter: blur(6px); }
+}
+body.leaving .card-frame {
+    animation: reveal-out .45s cubic-bezier(.4,0,.2,1) forwards;
+}
+body.leaving::before {
+    transition: opacity .45s ease;
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.leaving .card-frame { animation: none; }
+}
+
 /* ปรับแต่งการ์ดโทนพาสเทลโปร่งแสงสไตล์ Glassmorphism (เขียวมิ้นต์เป็นกรอบหลัก) */
 .card {
     background: rgba(255, 255, 255, 0.88);
@@ -338,9 +355,25 @@ p {
         <div class="topic-chip"><span class="num">04</span><div><b>เป้าหมายอนาคต</b>คณะที่สนใจ & อาชีพในฝัน</div></div>
     </div>
     
-    <a href="portfolio.html" class="btn">แฟ้มสะสมผลงาน ✨ <span class="arrow">→</span></a>
+    <a href="portfolio.html" class="btn" id="goBtn">แฟ้มสะสมผลงาน ✨ <span class="arrow">→</span></a>
 </div>
 </div>
+
+<script>
+    /* เล่นเอฟเฟกต์การ์ดพุ่งไปข้างหน้าแล้วจางหาย ก่อนพาไปหน้าพอร์ตฟอลิโอจริง */
+    const goBtn = document.getElementById('goBtn');
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    goBtn.addEventListener('click', function (e) {
+        const href = goBtn.getAttribute('href');
+        if (reduceMotion || document.body.classList.contains('leaving')) return; // ปล่อยให้ลิงก์ทำงานปกติ
+        e.preventDefault();
+        document.body.classList.add('leaving');
+        setTimeout(function () {
+            window.location.href = href;
+        }, 430);
+    });
+</script>
 
 </body>
 </html>
