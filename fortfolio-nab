@@ -1,0 +1,117 @@
+/* ============================================================
+   portfolio-nav.js — เชื่อมหน้าพอร์ตฟอลิโอที่แยกไฟล์เข้าด้วยกัน
+   ทำหน้าที่: เลขหน้า/จุดนำทาง, ปุ่มก่อนหน้า-ถัดไป, ปุ่มลัดคีย์บอร์ด/ปัดจอ,
+   และเอฟเฟกต์เข้า-ออกหน้าที่ต่อเนื่องกันเวลาสลับไฟล์จริงๆ
+   ตั้งค่าที่ต้องมีใน <body data-page-index="N">  (N = 0..4)
+   ============================================================ */
+(function () {
+  var PAGES = [
+    { href: 'portfolio.html',  label: 'ปก' },
+    { href: 'section-02.html', label: 'ประวัติการศึกษา' },
+    { href: 'section-03.html', label: 'ประวัติส่วนตัว' },
+    { href: 'section-04.html', label: 'กิจกรรมที่เข้าร่วม' },
+    { href: 'section-05.html', label: 'ความสนใจในการศึกษาต่อ' }
+  ];
+
+  function pad(n) { return n.toString().padStart(2, '0'); }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.body;
+    var current = parseInt(body.dataset.pageIndex, 10) || 0;
+    var total = PAGES.length;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- เลขความคืบหน้า ---------- */
+    var progressEl = document.getElementById('progress');
+    if (progressEl) progressEl.textContent = pad(current + 1) + ' / ' + pad(total);
+
+    /* ---------- เอฟเฟกต์พาไปหน้าอื่นแบบต่อเนื่อง ---------- */
+    function goTo(href, dir) {
+      if (!href) return;
+      if (reduceMotion) { window.location.href = href; return; }
+      body.classList.add(dir === 'back' ? 'leaving-back' : 'leaving-forward');
+      setTimeout(function () { window.location.href = href; }, 460);
+    }
+
+    function wireLink(el, href, dir) {
+      if (!el) return;
+      el.href = href;
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        goTo(href, dir);
+      });
+    }
+
+    /* ---------- จุดนำทาง (dots) ---------- */
+    var dotsEl = document.getElementById('dots');
+    if (dotsEl) {
+      PAGES.forEach(function (p, i) {
+        var isCurrent = i === current;
+        var dot = document.createElement(isCurrent ? 'span' : 'a');
+        dot.className = 'dot' + (isCurrent ? ' active' : '');
+        dot.textContent = pad(i + 1);
+        if (!isCurrent) {
+          dot.setAttribute('aria-label', 'ไปที่ ' + p.label);
+          wireLink(dot, p.href, i < current ? 'back' : 'forward');
+        } else {
+          dot.setAttribute('aria-current', 'page');
+        }
+        dotsEl.appendChild(dot);
+      });
+    }
+
+    /* ---------- ปุ่มก่อนหน้า / ถัดไป ---------- */
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+
+    if (prevBtn) {
+      if (current === 0) {
+        prevBtn.classList.add('is-disabled');
+        prevBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        wireLink(prevBtn, PAGES[current - 1].href, 'back');
+      }
+    }
+    if (nextBtn) {
+      if (current === total - 1) {
+        nextBtn.classList.add('is-disabled');
+        nextBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        wireLink(nextBtn, PAGES[current + 1].href, 'forward');
+      }
+    }
+
+    /* ---------- ลิงก์กลับหน้าแรก (index.html) ---------- */
+    var backLink = document.querySelector('.back-link');
+    if (backLink) {
+      var homeHref = backLink.getAttribute('href');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        goTo(homeHref, 'back');
+      });
+    }
+
+    /* ---------- คีย์บอร์ด ---------- */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' && nextBtn && !nextBtn.classList.contains('is-disabled')) nextBtn.click();
+      if (e.key === 'ArrowLeft' && prevBtn && !prevBtn.classList.contains('is-disabled')) prevBtn.click();
+    });
+
+    /* ---------- ปัดจอบนมือถือ ---------- */
+    var touchStartX = null;
+    document.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+      if (touchStartX === null) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 60) {
+        if (dx < 0 && nextBtn && !nextBtn.classList.contains('is-disabled')) nextBtn.click();
+        if (dx > 0 && prevBtn && !prevBtn.classList.contains('is-disabled')) prevBtn.click();
+      }
+      touchStartX = null;
+    }, { passive: true });
+
+    /* ---------- เอฟเฟกต์ตอนหน้านี้โหลดเข้ามา ---------- */
+    var slide = document.querySelector('.slide');
+    if (slide && !reduceMotion) slide.classList.add('page-reveal');
+  });
+})();
