@@ -8,37 +8,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600;700&family=Sarabun:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  วิธีปรับแก้ให้เป็นของคุณเอง (อ่านก่อนแก้ไข)                          ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║  1) แทนที่ข้อความในวงเล็บเหลี่ยม [ ] ทุกจุดด้วยข้อมูลจริงของคุณ         ║
-  ║                                                                    ║
-  ║  2) ใส่รูปภาพ: ในโค้ดจะมีกล่องเส้นประ 3 แบบ ค้นหาคำว่า                ║
-  ║     "◆◆◆ ใส่รูปตรงนี้ ◆◆◆" ในโค้ด (มีทั้งหมด 6 จุด) แล้วทำตาม         ║
-  ║     คำแนะนำในคอมเมนต์เหนือแต่ละจุดเพื่อแทนที่ด้วย <img> จริง          ║
-  ║                                                                    ║
-  ║  3) เพิ่ม/ลบการ์ดกิจกรรมใน Section 04 และอันดับคณะใน Section 05      ║
-  ║     ได้ตามจริง โดยคัดลอกโครงสร้างการ์ดที่มีอยู่แล้ววาง               ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
-
 <style>
   :root{
-    /* ===== ธีมสีเขียว-ชมพูพาสเทล (Mint & Rose) ===== */
-    --sky:#E7F6EC;          /* เขียวมิ้นต์อ่อนพาสเทล ใช้พื้นหลังส่วนปก */
-    --navy:#2F6B52;         /* เขียวเข้ม ใช้หัวข้อหลัก */
-    --blue:#E38AA8;         /* ชมพูกุหลาบ ใช้จุดเน้น/ลิงก์ */
-    --blue-light:#F4C4D6;   /* ชมพูอ่อน ใช้เส้นขอบ/กรอบรูป */
-    --paper:#FBFDFA;        /* พื้นหลังหลัก ขาวอมมิ้นต์ */
-    --paper-alt:#EAF7EE;    /* พื้นหลังสลับแถว/การ์ด เขียวมิ้นต์อ่อน */
-    --line:#D3ECD9;         /* เส้นแบ่ง เขียวอ่อน */
-    --gold:#D98CAF;         /* ชมพูกุหลาบเข้ม ใช้ตัดกับเขียวให้หรูขึ้น */
-    --ink:#264B3C;          /* ตัวอักษรหลัก เขียวเข้ม */
-    --ink-soft:#5E8A74;     /* ตัวอักษรรอง เขียวนวล */
+    --sky:#E7F6EC;
+    --navy:#2F6B52;
+    --blue:#E38AA8;
+    --blue-light:#F4C4D6;
+    --paper:#FBFDFA;
+    --paper-alt:#EAF7EE;
+    --line:#D3ECD9;
+    --gold:#D98CAF;
+    --ink:#264B3C;
+    --ink-soft:#5E8A74;
     --white:#FFFFFF;
-    --blush-deep:#F6D3E1;   /* ชมพูกลาง ใช้ตกแต่งไล่สี */
-    --mint-deep:#C9EAD3;    /* เขียวมิ้นต์กลาง ใช้ตกแต่งไล่สี */
+    --blush-deep:#F6D3E1;
+    --mint-deep:#C9EAD3;
     --font-display:'Noto Serif Thai', serif;
     --font-body:'Sarabun', sans-serif;
     --font-mono:'IBM Plex Mono', monospace;
@@ -59,7 +43,6 @@
 
   .app{position:relative;height:100vh;height:100dvh;overflow:hidden;}
 
-  /* ---------- top bar ---------- */
   .topbar{
     position:fixed;top:0;left:0;right:0;z-index:30;
     display:flex;justify-content:space-between;align-items:center;
@@ -77,7 +60,6 @@
     color:var(--navy);opacity:.85;
   }
 
-  /* ---------- deck / slides ---------- */
   .deck{
     display:flex;height:100vh;height:100dvh;
     transition:transform .6s cubic-bezier(.65,.05,.36,1);
@@ -88,7 +70,6 @@
     overflow-y:auto;
     padding:6.5rem 1.5rem 6rem;
     position:relative;
-    /* ===== เอฟเฟกต์ตอนเลื่อนสไลด์ ===== */
     transition:opacity .55s ease, transform .55s ease, filter .55s ease;
     opacity:.3;
     transform:scale(.94);
@@ -103,7 +84,6 @@
     .slide{padding:7rem 4rem 6.5rem;}
   }
 
-  /* ---------- cover slide ---------- */
   .slide--cover{
     background:
       radial-gradient(circle at 85% 12%, rgba(227,138,168,.4), transparent 45%),
@@ -171,7 +151,6 @@
   .photo-box svg{width:34px;height:34px;opacity:.75;}
   .photo-box span{font-size:.75rem;line-height:1.5;font-weight:600;}
 
-  /* ---------- paper slides (02-05) ---------- */
   .slide--paper{
     background:
       radial-gradient(circle at 100% 0%, rgba(227,138,168,.16), transparent 40%),
@@ -201,7 +180,6 @@
   }
   .content-wrap{max-width:48rem;margin:0 auto;}
 
-  /* table */
   .table-wrap{overflow-x:auto;margin-bottom:1.8rem;border-radius:8px;
     box-shadow:0 6px 20px -14px rgba(47,107,82,.35);}
   table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:480px;}
@@ -218,7 +196,6 @@
   }
   .plan-line b{color:var(--navy);}
 
-  /* section 03 personal */
   .personal-grid{display:grid;gap:2.2rem;}
   @media (min-width:768px){
     .personal-grid{grid-template-columns:220px 1fr;align-items:start;}
@@ -244,11 +221,10 @@
     position:relative;padding-left:1.3rem;
   }
   .statement::before{
-    content:"“";position:absolute;left:-.1rem;top:1.1rem;font-family:var(--font-display);
+    content:"\201C";position:absolute;left:-.1rem;top:1.1rem;font-family:var(--font-display);
     font-size:2.2rem;color:var(--gold);line-height:0;
   }
 
-  /* section 04 activities */
   .activity-grid{display:grid;gap:1.4rem;}
   @media (min-width:640px){.activity-grid{grid-template-columns:1fr 1fr;}}
   .activity-card{
@@ -273,7 +249,6 @@
   .activity-title{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:.5rem;}
   .activity-desc{font-size:.86rem;color:var(--ink-soft);line-height:1.7;}
 
-  /* section 05 interests */
   .rank-list{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:2.2rem;}
   .rank-item{
     display:grid;grid-template-columns:2.4rem 1fr;gap:1rem;
@@ -293,7 +268,6 @@
   }
   .goal-box b{color:var(--navy);}
 
-  /* ---------- nav controls ---------- */
   .nav-controls{
     position:fixed;left:0;right:0;bottom:1.3rem;z-index:30;
     display:flex;align-items:center;justify-content:center;gap:1rem;
@@ -321,7 +295,6 @@
   }
   .dot.active{background:var(--gold);color:var(--white);font-weight:600;}
 
-  /* ---------- ตกแต่งฟุ้งฟิ้ง / ขี้เล่น ---------- */
   @keyframes floaty{
     0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
     50%{transform:translateY(-10px) rotate(var(--r,0deg));}
@@ -345,7 +318,6 @@
   .sparkle.small{font-size:1rem;}
   .sparkle.big{font-size:2rem;}
 
-  /* จุดลายจ้ำเบา ๆ บนพื้นหลังกระดาษ */
   .slide--paper{
     background-image:
       radial-gradient(circle at 100% 0%, rgba(227,138,168,.16), transparent 40%),
@@ -363,7 +335,6 @@
   .slide--paper > .sparkle{position:absolute;}
   .slide--paper > .ghost-num{position:absolute;top:1.2rem;right:1.2rem;}
 
-  /* ริบบิ้นน่ารัก ๆ มุมปก */
   .cute-badge{
     display:inline-flex;align-items:center;gap:.4rem;
     background:var(--white);border:1.5px dashed var(--blue);
@@ -373,7 +344,6 @@
     transform:rotate(-2deg);
   }
 
-  /* ป้ายเลขหัวข้อทรงกลมจุด ๆ แทนตัวเลขโปร่งเดิม ให้ดูขี้เล่นขึ้น */
   .ghost-num{
     display:flex;align-items:center;justify-content:center;
     width:5.4rem;height:5.4rem;border-radius:50%;
@@ -387,7 +357,6 @@
   .section-title{display:inline-flex;align-items:center;gap:.5rem;}
   .section-title .emoji{font-size:1.3rem;-webkit-text-fill-color:initial;}
 
-  /* การ์ดกิจกรรมเอียงเล็กน้อยแบบสมุดสะสมภาพ */
   .activity-card{border-radius:14px;}
   .activity-card:nth-child(4n+1){transform:rotate(-1.4deg);}
   .activity-card:nth-child(4n+2){transform:rotate(1.1deg);}
@@ -414,7 +383,6 @@
   .nav-btn:hover:not(:disabled){transform:translateY(-2px) scale(1.08) rotate(-4deg);}
   .dot.active{transform:scale(1.15);}
 
-  /* ---------- กรอบมุมจอ (page corner frame) ---------- */
   .frame-corner{
     position:fixed;z-index:26;pointer-events:none;width:20px;height:20px;
   }
@@ -423,7 +391,6 @@
   .frame-corner.bl{bottom:10px;left:10px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold);border-radius:0 0 0 7px;}
   .frame-corner.br{bottom:10px;right:10px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold);border-radius:0 0 7px 0;}
 
-  /* ---------- กรอบรูปสองชั้น + ดอกไม้มุม (สำหรับรูปโปรไฟล์) ---------- */
   .frame-wrap{position:relative;}
   .frame-wrap::before{
     content:"";position:absolute;inset:-9px;
@@ -438,7 +405,6 @@
   .corner-deco.bl{bottom:-15px;left:-15px;transform:scaleY(-1);}
   .corner-deco.br{bottom:-15px;right:-15px;transform:scale(-1,-1);}
 
-  /* ---------- เทปวาชิบนการ์ดกิจกรรม ---------- */
   .activity-card{position:relative;}
   .activity-card::before{
     content:"";position:absolute;top:0;left:14px;z-index:3;
@@ -448,7 +414,6 @@
     box-shadow:0 2px 5px rgba(38,75,60,.2);
   }
 
-  /* ---------- ป้ายอันดับ 1 ในใจ ---------- */
   .fave-badge{
     display:inline-flex;align-items:center;gap:.25rem;
     font-family:var(--font-mono);font-size:.66rem;
@@ -458,7 +423,6 @@
     box-shadow:0 3px 8px -3px rgba(47,107,82,.65);
   }
 
-  /* ---------- คอนเฟตติตอนเปลี่ยนหน้า ---------- */
   .confetti-particle{
     position:fixed;z-index:60;pointer-events:none;font-size:.95rem;
     left:0;top:0;transform:translate(-50%,-50%);
@@ -493,7 +457,6 @@
 
   <div class="deck" id="deck">
 
-    <!-- ================= SLIDE 0 — COVER ================= -->
     <section class="slide slide--cover" data-index="0">
       <span class="sparkle big tw" style="top:8%;left:6%;--r:-8deg;">✨</span>
       <span class="sparkle small" style="top:18%;right:12%;--r:10deg;animation-delay:.6s;">🎀</span>
@@ -516,17 +479,12 @@
           </p>
 
           <p class="cover-quote">
-            “Consistency is key”
+            "Consistency is key"
           </p>
 
           <p class="cover-status">REC. NO. 2569-XXX · STATUS: FOR REVIEW</p>
         </div>
 
-        <!-- ◆◆◆ ใส่รูปตรงนี้ (1/6) — รูปโปรไฟล์หน้าปก ◆◆◆
-             วิธีใส่รูป: ลบ <div class="photo-box">...</div> ทั้งก้อนด้านล่างนี้ทิ้ง
-             แล้วแทนที่ด้วยบรรทัดเดียวนี้ (เปลี่ยน "18.png" เป็นชื่อไฟล์รูปของคุณ):
-             <img src="18.png" alt="รูปโปรไฟล์" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;box-shadow:0 8px 24px -12px rgba(47,107,82,.3);">
-        -->
         <div class="frame-wrap">
           <span class="corner-deco tl">🌸</span>
           <span class="corner-deco tr">🌸</span>
@@ -537,11 +495,9 @@
              <img src="Screenshot 2026-06-30 105442.png" alt="รูปโปรไฟล์" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;box-shadow:0 8px 24px -12px rgba(47,107,82,.3);">
           </div>
         </div>
-        <!-- ◆◆◆ จบจุดใส่รูปที่ 1 ◆◆◆ -->
       </div>
     </section>
 
-    <!-- ================= SLIDE 1 — SECTION 02 ================= -->
     <section class="slide slide--paper" data-index="1">
       <span class="sparkle small tw" style="top:14%;left:5%;">📚</span>
       <span class="sparkle small" style="bottom:10%;right:14%;animation-delay:.8s;">✏️</span>
@@ -559,7 +515,7 @@
             </thead>
             <tbody>
               <tr><td>มัธยมศึกษาตอนปลาย</td><td>บ้านบึง"อุตสาหกรรมนุเคราะห์"</td><td>3.81</td></tr>
-              <tr><td>มัธยมศึกษาตอนต้น</td><td>บ้านบีง"อุตสาหกรรมนัเคราะห์"</td><td>3.87</td></tr>
+              <tr><td>มัธยมศึกษาตอนต้น</td><td>บ้านบึง"อุตสาหกรรมนุเคราะห์"</td><td>3.87</td></tr>
             </tbody>
           </table>
         </div>
@@ -568,7 +524,6 @@
       </div>
     </section>
 
-    <!-- ================= SLIDE 2 — SECTION 03 ================= -->
     <section class="slide slide--paper" data-index="2">
       <span class="sparkle small tw" style="top:12%;right:8%;">💌</span>
       <span class="sparkle small" style="bottom:16%;left:6%;animation-delay:1s;">🌷</span>
@@ -580,11 +535,6 @@
         <h2 class="section-title"><span class="emoji">🌸</span> ประวัติส่วนตัว</h2>
 
         <div class="personal-grid">
-          <!-- ◆◆◆ ใส่รูปตรงนี้ (2/6) — รูปติดบัตร ◆◆◆
-               วิธีใส่รูป: ลบ <div class="id-photo">...</div> ทั้งก้อนด้านล่างนี้ทิ้ง
-               แล้วแทนที่ด้วยบรรทัดเดียวนี้ (เปลี่ยนชื่อไฟล์ตามจริง):
-               <img src="รูปติดบัตร.jpg" alt="รูปติดบัตร" class="id-photo" style="object-fit:cover;border:none;">
-          -->
           <div class="frame-wrap" style="max-width:220px;">
             <span class="corner-deco tl">🌸</span>
             <span class="corner-deco tr">🌸</span>
@@ -595,7 +545,6 @@
           <img src="18.png" alt="รูปติดบัตร" class="id-photo" style="object-fit:cover;border:none;">
             </div>
           </div>
-          <!-- ◆◆◆ จบจุดใส่รูปที่ 2 ◆◆◆ -->
 
           <div>
             <div class="field-grid">
@@ -615,7 +564,6 @@
       </div>
     </section>
 
-    <!-- ================= SLIDE 3 — SECTION 04 ================= -->
     <section class="slide slide--paper" data-index="3">
       <span class="sparkle small tw" style="top:10%;left:8%;">🎈</span>
       <span class="sparkle small" style="bottom:8%;right:10%;animation-delay:.5s;">🏆</span>
@@ -628,13 +576,8 @@
 
         <div class="activity-grid">
           <div class="activity-card">
-            <!-- ◆◆◆ ใส่รูปตรงนี้ (3/6) — รูปกิจกรรมที่ 1 ◆◆◆
-                 แทนที่ <div class="activity-img">...</div> ด้วย:
-                 <img src="กิจกรรม1.jpg" alt="ค่ายบัญชีเยาวชน" class="activity-img" style="object-fit:cover;border:none;">
-            -->
-            <img src="IMG_2146.jpeg"alt="ละครคุณรรม" class="activity-img" 
+            <img src="IMG_2146.jpeg" alt="ละครคุณธรรม" class="activity-img" 
      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
-            <!-- ◆◆◆ จบจุดใส่รูปที่ 3 ◆◆◆ -->
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">ค่ายบัญชีเยาวชน คณะพาณิชยศาสตร์และการบัญชี [ชื่อมหาวิทยาลัย]</div>
@@ -643,10 +586,8 @@
           </div>
 
           <div class="activity-card">
-            <!-- ◆◆◆ ใส่รูปตรงนี้ (4/6) — รูปกิจกรรมที่ 2 ◆◆◆ (วิธีใส่เหมือนจุดที่ 3) -->
             <img src="IMG_2148.jpeg" alt="sudoku" class="activity-img" 
      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
-            <!-- ◆◆◆ จบจุดใส่รูปที่ 4 ◆◆◆ -->
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">แข่งขันตอบปัญหาบัญชีและการเงินระดับมัธยมศึกษา</div>
@@ -655,10 +596,8 @@
           </div>
 
           <div class="activity-card">
-            <!-- ◆◆◆ ใส่รูปตรงนี้ (5/6) — รูปกิจกรรมที่ 3 ◆◆◆ (วิธีใส่เหมือนจุดที่ 3) -->
-              <img src="IMG_2150.jpeg"alt="วิทยากร" class="activity-img" 
+              <img src="IMG_2150.jpeg" alt="วิทยากร" class="activity-img" 
      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
-            <!-- ◆◆◆ จบจุดใส่รูปที่ 5 ◆◆◆ -->
             <div class="activity-body">
               <div class="activity-year">2568</div>
               <div class="activity-title">โครงการบริษัทจำลอง (Mini Company) ระดับโรงเรียน</div>
@@ -667,10 +606,8 @@
           </div>
 
           <div class="activity-card">
-            <!-- ◆◆◆ ใส่รูปตรงนี้ (6/6) — รูปกิจกรรมที่ 4 ◆◆◆ (วิธีใส่เหมือนจุดที่ 3) -->
             <img src="IMG_2147.jpeg" alt="คุณธรรม" class="activity-img" 
      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
-            <!-- ◆◆◆ จบจุดใส่รูปที่ 6 ◆◆◆ -->
             <div class="activity-body">
               <div class="activity-year">2569</div>
               <div class="activity-title">ประกวดแผนธุรกิจ Young Financial Planner</div>
@@ -681,7 +618,6 @@
       </div>
     </section>
 
-    <!-- ================= SLIDE 4 — SECTION 05 ================= -->
     <section class="slide slide--paper" data-index="4">
       <span class="sparkle small tw" style="top:12%;right:6%;">🌟</span>
       <span class="sparkle small" style="bottom:14%;left:8%;animation-delay:.9s;">🎓</span>
@@ -782,7 +718,6 @@
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current === total - 1;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
-    /* เอฟเฟกต์เฟด+ซูมตอนเลื่อนสไลด์: เฉพาะสไลด์ปัจจุบันจะคมชัดและเต็มขนาด */
     slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
   }
 
