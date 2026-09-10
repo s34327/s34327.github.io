@@ -45,7 +45,7 @@
 
   .topbar{
     position:fixed;top:0;left:0;right:0;z-index:30;
-    display:flex;justify-content:space-between;align-items:center;
+    display:flex;justify-space:between;align-items:center;
     padding:1.1rem 1.5rem;
     pointer-events:none;
   }
@@ -58,6 +58,47 @@
   .progress{
     font-family:var(--font-mono);font-size:.8rem;letter-spacing:.05em;
     color:var(--navy);opacity:.85;
+  }
+
+  /* สไตล์สำหรับเมนูเลือกหน้าด่วน */
+  .quick-nav {
+    display: flex;
+    gap: .4rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    padding: .3rem .5rem;
+    border-radius: 999px;
+    border: 1px solid var(--blue-light);
+    box-shadow: 0 4px 12px -4px rgba(47,107,82,.15);
+  }
+
+  .nav-chip {
+    border: none;
+    background: transparent;
+    color: var(--navy);
+    font-family: var(--font-body);
+    font-size: .8rem;
+    font-weight: 500;
+    padding: .25rem .78rem;
+    border-radius: 999px;
+    transition: all .2s ease;
+  }
+
+  .nav-chip:hover {
+    background: var(--paper-alt);
+    color: var(--navy);
+  }
+
+  .nav-chip.active {
+    background: var(--gold);
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  @media (max-width: 680px) {
+    .quick-nav {
+      display: none;
+    }
   }
 
   .deck{
@@ -452,6 +493,16 @@
 
   <header class="topbar">
     <a class="back-link" href="index.html">← กลับหน้าแนะนำตัว</a>
+    
+    <!-- เมนูเลือกหน้าด่วน -->
+    <nav class="quick-nav">
+      <button class="nav-chip active" onclick="goToSlide(0, event)">หน้าปก</button>
+      <button class="nav-chip" onclick="goToSlide(1, event)">ประวัติการศึกษา</button>
+      <button class="nav-chip" onclick="goToSlide(2, event)">ประวัติส่วนตัว</button>
+      <button class="nav-chip" onclick="goToSlide(3, event)">กิจกรรม</button>
+      <button class="nav-chip" onclick="goToSlide(4, event)">ความสนใจ</button>
+    </nav>
+
     <div class="progress" id="progress">01 / 05</div>
   </header>
 
@@ -577,7 +628,7 @@
         <div class="activity-grid">
           <div class="activity-card">
             <img src="IMG_2146.jpeg" alt="ละครคุณธรรม" class="activity-img" 
-     style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
+      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">ค่ายบัญชีเยาวชน คณะพาณิชยศาสตร์และการบัญชี [ชื่อมหาวิทยาลัย]</div>
@@ -587,7 +638,7 @@
 
           <div class="activity-card">
             <img src="IMG_2148.jpeg" alt="sudoku" class="activity-img" 
-     style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
+      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
             <div class="activity-body">
               <div class="activity-year">2567</div>
               <div class="activity-title">แข่งขันตอบปัญหาบัญชีและการเงินระดับมัธยมศึกษา</div>
@@ -597,7 +648,7 @@
 
           <div class="activity-card">
               <img src="IMG_2150.jpeg" alt="วิทยากร" class="activity-img" 
-     style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
+      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
             <div class="activity-body">
               <div class="activity-year">2568</div>
               <div class="activity-title">โครงการบริษัทจำลอง (Mini Company) ระดับโรงเรียน</div>
@@ -607,7 +658,7 @@
 
           <div class="activity-card">
             <img src="IMG_2147.jpeg" alt="คุณธรรม" class="activity-img" 
-     style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
+      style="width:100%;height:100%;object-fit:cover;display:block;border:none;">
             <div class="activity-body">
               <div class="activity-year">2569</div>
               <div class="activity-title">ประกวดแผนธุรกิจ Young Financial Planner</div>
@@ -649,7 +700,7 @@
             <div class="rank-num">03</div>
             <div>
               <div class="rank-major">บัญชีบัณฑิต </div>
-              <div class="rank-school">คณะพาณิและการบัญชี มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน</div>
+              <div class="rank-school">คณะพาณิชยศาสตร์และการบัญชี มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน</div>
               <p class="rank-reason">เหตุผลที่เลือกมหาวิทยาลัยนี้เป็นอันดับที่ 3 เนื่องจาก เป็นมหาวิทยาลัยที่มีชื่อเสียงด้านบริหารธุรกิจและการบัญชี และมีหลักสูตรที่ตรงกับความสนใจ จึงเป็นอีกหนึ่งมหาวิทยาลัยที่อยากเข้าศึกษาและพัฒนาตนเองในสายบัญชี</p>
             </div>
           </div>
@@ -712,13 +763,23 @@
   });
   const dots = Array.from(dotsEl.children);
 
+  function goToSlide(index, event) {
+    current = index;
+    update();
+    if(event && event.clientX) burstConfetti(event.clientX, event.clientY);
+  }
+
   function update(){
     deck.style.transform = 'translateX(-' + (current * 100) + 'vw)';
     progressEl.textContent = pad(current + 1) + ' / ' + pad(total);
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current === total - 1;
+    
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+
+    const navChips = document.querySelectorAll('.nav-chip');
+    navChips.forEach((chip, i) => chip.classList.toggle('active', i === current));
   }
 
   prevBtn.addEventListener('click', (e) => { if(current > 0){ current--; update(); burstConfetti(e.clientX, e.clientY); } });
