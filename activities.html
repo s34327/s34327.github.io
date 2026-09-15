@@ -171,8 +171,10 @@
     transition:transform .2s, box-shadow .2s;
     position:relative;
   }
-  .activity-card:nth-child(2n+1){transform:rotate(-1.4deg);}
-  .activity-card:nth-child(2n+2){transform:rotate(1.1deg);}
+  .activity-card:nth-child(4n+1){transform:rotate(-1.4deg);}
+  .activity-card:nth-child(4n+2){transform:rotate(1.1deg);}
+  .activity-card:nth-child(4n+3){transform:rotate(-.8deg);}
+  .activity-card:nth-child(4n+4){transform:rotate(1.5deg);}
   .activity-card:hover{transform:rotate(0deg) translateY(-4px) scale(1.015);box-shadow:0 12px 24px -14px rgba(47,107,82,.5);}
   .activity-card::before{
     content:"";position:absolute;top:0;left:14px;z-index:3;
@@ -324,7 +326,7 @@
 
         <div class="activity-grid">
 
-          <!-- กิจกรรมที่ 5 (คงเดิม มีที่ใส่รูปภาพและเกียรติบัตร) -->
+          <!-- กิจกรรมที่ 5 (มีทั้งภาพเกียรติบัตร และภาพการทำกิจกรรม) -->
           <div class="activity-card">
             <div class="activity-body">
               <div class="activity-year">[ปีการศึกษา]</div>
@@ -361,11 +363,53 @@
             </div>
           </div>
 
-          <!-- กิจกรรมที่ 6 (ลบภาพการทำกิจกรรมออก) -->
+          <!-- กิจกรรมที่ 6 (มีเฉพาะภาพเกียรติบัตร) -->
           <div class="activity-card">
             <div class="activity-body">
               <div class="activity-year">[ปีการศึกษา]</div>
               <div class="activity-title">[ชื่อกิจกรรม/โครงการที่ 6]</div>
+              <div class="cert-caption">เกียรติบัตร: [ชื่อเกียรติบัตร]</div>
+              <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากกิจกรรมนี้]</p>
+              
+              <div class="mini-photo-label">ภาพเกียรติบัตร</div>
+              <div class="cert-frame">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="13" rx="1.5"/><path d="M8 7.5h8M8 10.5h5"/><path d="M9.5 16v4.5l2.5-1.6 2.5 1.6V16"/></svg>
+                <span>แนบภาพเกียรติบัตร<br>(ถ่ายรูปหรือสแกน)</span>
+              </div>
+              <div class="cert-info">
+                <p class="plan-line"><b>ออกโดย:</b> [ระบุหน่วยงานที่มอบเกียรติบัตร]</p>
+                <p class="plan-line"><b>วันที่ได้รับ:</b> [ระบุวันที่ได้รับ]</p>
+                <p class="cert-desc">[คำบรรยายเกี่ยวกับเกียรติบัตรนี้ เช่น ได้รับจากการเข้าร่วมกิจกรรมอะไร ในบทบาทใด]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- กิจกรรมที่ 7 (มีเฉพาะภาพเกียรติบัตร แบบเดียวกับโครงการที่ 6) -->
+          <div class="activity-card">
+            <div class="activity-body">
+              <div class="activity-year">[ปีการศึกษา]</div>
+              <div class="activity-title">[ชื่อกิจกรรม/โครงการที่ 7]</div>
+              <div class="cert-caption">เกียรติบัตร: [ชื่อเกียรติบัตร]</div>
+              <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากกิจกรรมนี้]</p>
+              
+              <div class="mini-photo-label">ภาพเกียรติบัตร</div>
+              <div class="cert-frame">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="13" rx="1.5"/><path d="M8 7.5h8M8 10.5h5"/><path d="M9.5 16v4.5l2.5-1.6 2.5 1.6V16"/></svg>
+                <span>แนบภาพเกียรติบัตร<br>(ถ่ายรูปหรือสแกน)</span>
+              </div>
+              <div class="cert-info">
+                <p class="plan-line"><b>ออกโดย:</b> [ระบุหน่วยงานที่มอบเกียรติบัตร]</p>
+                <p class="plan-line"><b>วันที่ได้รับ:</b> [ระบุวันที่ได้รับ]</p>
+                <p class="cert-desc">[คำบรรยายเกี่ยวกับเกียรติบัตรนี้ เช่น ได้รับจากการเข้าร่วมกิจกรรมอะไร ในบทบาทใด]</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- กิจกรรมที่ 8 (มีเฉพาะภาพเกียรติบัตร แบบเดียวกับโครงการที่ 6) -->
+          <div class="activity-card">
+            <div class="activity-body">
+              <div class="activity-year">[ปีการศึกษา]</div>
+              <div class="activity-title">[ชื่อกิจกรรม/โครงการที่ 8]</div>
               <div class="cert-caption">เกียรติบัตร: [ชื่อเกียรติบัตร]</div>
               <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากกิจกรรมนี้]</p>
               
