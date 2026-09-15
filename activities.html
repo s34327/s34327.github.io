@@ -72,7 +72,22 @@
   .slide--paper > *{position:relative;z-index:1;}
   .slide--paper > .sparkle{position:absolute;}
 
-  .content-wrap{max-width:48rem;margin:0 auto;}
+  .content-wrap{max-width:56rem;margin:0 auto;}
+
+  .category-divider {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 1.8rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px dashed var(--line);
+  }
+  .category-divider:first-child { margin-top: 0; }
+  .category-divider .icon { font-size: 1.2rem; }
 
   .activity-grid{display:grid;gap:1.4rem;}
   @media (min-width:640px){.activity-grid{grid-template-columns:1fr 1fr;}}
@@ -82,10 +97,8 @@
     transition:transform .2s, box-shadow .2s;
     position:relative;
   }
-  .activity-card:nth-child(4n+1){transform:rotate(-1.4deg);}
-  .activity-card:nth-child(4n+2){transform:rotate(1.1deg);}
-  .activity-card:nth-child(4n+3){transform:rotate(-.8deg);}
-  .activity-card:nth-child(4n+4){transform:rotate(1.5deg);}
+  .activity-card:nth-child(2n+1){transform:rotate(-1.2deg);}
+  .activity-card:nth-child(2n+2){transform:rotate(1.1deg);}
   .activity-card:hover{transform:rotate(0deg) translateY(-4px) scale(1.015);box-shadow:0 12px 24px -14px rgba(47,107,82,.5);}
   .activity-card::before{
     content:"";position:absolute;top:0;left:14px;z-index:3;
@@ -213,52 +226,55 @@
       <span class="sparkle small tw" style="top:55%;right:4%;animation-delay:1s;">🎊</span>
       <span class="sparkle small" style="bottom:44%;left:4%;animation-delay:.3s;">🎨</span>
       
-      <div class="content-wrap" style="max-width:56rem;">
+      <div class="content-wrap">
+        
+        <!-- หมวดที่ 1: วิชาการ -->
+        <div class="category-divider">
+          <span class="icon">📚</span> กิจกรรมวิชาการ
+        </div>
+
         <div class="activity-grid">
-          
-          <!-- กิจกรรมที่ 1 -->
+          <!-- วิชาการ กรอบที่ 1 -->
           <div class="activity-card">
             <div class="activity-body">
               <div class="activity-year">2567</div>
-              <div class="activity-title">ค่ายบัญชีเยาวชน คณะพาณิชยศาสตร์และการบัญชี [ชื่อมหาวิทยาลัย]</div>
-              <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากค่ายนี้]</p>
+              <div class="activity-title">โครงการอบรมความรู้เบื้องต้นเกี่ยวกับมาตรฐานการบัญชีและการเงิน</div>
+              <p class="activity-desc">เข้าร่วมการอบรมเชิงปฏิบัติการเพื่อเรียนรู้พื้นฐานการจัดทำบัญชี การวิเคราะห์งบการเงินเบื้องต้น และเทคนิคการบันทึกบัญชีตามหลักการบัญชีที่รับรองทั่วไป ช่วยเสริมสร้างทักษะการคำนวณและความเข้าใจในระบบการเงินอย่างเป็นระบบ</p>
             </div>
           </div>
 
-          <!-- กิจกรรมที่ 2 -->
+          <!-- วิชาการ กรอบที่ 2 -->
           <div class="activity-card">
             <div class="activity-body">
               <div class="activity-year">2567</div>
-              <div class="activity-title">แข่งขันตอบปัญหาบัญชีและการเงินระดับมัธยมศึกษา</div>
-              <p class="activity-desc">[อธิบายรูปแบบการแข่งขัน ผลคะแนน และสิ่งที่ได้เรียนรู้จากการแข่งขัน]</p>
+              <div class="activity-title">การแข่งขันตอบปัญหาทักษะทางบัญชีและการบริหารจัดการระดับมัธยมศึกษา</div>
+              <p class="activity-desc">เข้าร่วมการแข่งขันตอบปัญหาทางวิชาการ ทดสอบความรู้ด้านบัญชีการเงิน บัญชีบริหาร และกฎหมายภาษีอากรเบื้องต้น ร่วมวางแผนการทำงานเป็นทีมและแก้โจทย์ปัญหาทางการเงินภายใต้ข้อจำกัดของเวลาได้อย่างมีประสิทธิภาพ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- หมวดที่ 2: จิตอาสา -->
+        <div class="category-divider">
+          <span class="icon">🤝</span> กิจกรรมจิตอาสา
+        </div>
+
+        <div class="activity-grid">
+          <!-- จิตอาสา กรอบที่ 1 -->
+          <div class="activity-card">
+            <div class="activity-body">
+              <div class="activity-year">2567</div>
+              <div class="activity-title">จิตอาสาฝ่ายบัญชีและการเงิน โครงการตลาดนัดรีไซเคิลของโรงเรียน</div>
+              <p class="activity-desc">รับหน้าที่จัดทำระบบบัญชีรับ-จ่าย คำนวณต้นทุน และสรุปยอดกำไรสุทธิจากการจำหน่ายขยะรีไซเคิลเพื่อนำรายได้ไปสนับสนุนทุนการศึกษา ช่วยฝึกทักษะการจัดการเงินในชีวิตจริงและการทำงานเพื่อประโยชน์ส่วนรวม</p>
             </div>
           </div>
 
-          <!-- กิจกรรมที่ 3 -->
+          <!-- จิตอาสา กรอบที่ 2 (มีรูปภาพและเกียรติบัตร) -->
           <div class="activity-card">
             <div class="activity-body">
               <div class="activity-year">2568</div>
-              <div class="activity-title">โครงการบริษัทจำลอง (Mini Company) ระดับโรงเรียน</div>
-              <p class="activity-desc">[อธิบายบทบาทหน้าที่ของคุณในโครงการ เช่น ฝ่ายบัญชี/การเงิน และผลลัพธ์ที่ได้]</p>
-            </div>
-          </div>
-
-          <!-- กิจกรรมที่ 4 -->
-          <div class="activity-card">
-            <div class="activity-body">
-              <div class="activity-year">2569</div>
-              <div class="activity-title">ประกวดแผนธุรกิจ Young Financial Planner</div>
-              <p class="activity-desc">[อธิบายแนวคิดของแผนธุรกิจ ทีม และผลการประกวดที่ได้รับ]</p>
-            </div>
-          </div>
-
-          <!-- กิจกรรมที่ 5 (มีที่ใส่รูปภาพและเกียรติบัตร) -->
-          <div class="activity-card">
-            <div class="activity-body">
-              <div class="activity-year">[ปีการศึกษา]</div>
-              <div class="activity-title">[ชื่อกิจกรรม/โครงการที่ 5]</div>
-              <div class="cert-caption">เกียรติบัตร: [ชื่อเกียรติบัตร]</div>
-              <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากกิจกรรมนี้]</p>
+              <div class="activity-title">จิตอาสาผู้ช่วยจัดทำระบบงบประมาณและบัญชีสำหรับชมรมเยาวชนพัฒนาชุมชน</div>
+              <div class="cert-caption">เกียรติบัตร: บัตรเชิดชูเกียรติผู้ทำประโยชน์ด้านจิตอาสาดีเด่น</div>
+              <p class="activity-desc">อาสาช่วยคุมงบประมาณในการจัดซื้อสิ่งของบริจาคแก่ชุมชน ออกแบบระบบลงบัญชีคลังสินค้าบริจาค และสรุปรายงานรายรับ-รายจ่ายอย่างโปร่งใส ส่งเสริมความรับผิดชอบและความมีระเบียบวินัยในตนเอง</p>
               
               <div class="mini-photo-label">ภาพเกียรติบัตร</div>
               <div class="cert-frame">
@@ -266,9 +282,9 @@
                 <span>แนบภาพเกียรติบัตร<br>(ถ่ายรูปหรือสแกน)</span>
               </div>
               <div class="cert-info">
-                <p class="plan-line"><b>ออกโดย:</b> [ระบุหน่วยงานที่มอบเกียรติบัตร]</p>
-                <p class="plan-line"><b>วันที่ได้รับ:</b> [ระบุวันที่ได้รับ]</p>
-                <p class="cert-desc">[คำบรรยายเกี่ยวกับเกียรติบัตรนี้ เช่น ได้รับจากการเข้าร่วมกิจกรรมอะไร ในบทบาทใด]</p>
+                <p class="plan-line"><b>ออกโดย:</b> ศูนย์ส่งเสริมกิจกรรมเยาวชนและจิตอาสาชุมชน</p>
+                <p class="plan-line"><b>วันที่ได้รับ:</b> 15 มกราคม 2568</p>
+                <p class="cert-desc">เกียรติบัตรมอบให้เพื่อแสดงว่าได้อุทิศตนและนำความรู้ด้านการบริหารจัดการเงินมาช่วยวางแผนระบบงบประมาณให้แก่องค์กรอย่างมีประสิทธิภาพ</p>
               </div>
 
               <div class="mini-photo-label">ภาพการทำกิจกรรม</div>
@@ -288,45 +304,8 @@
               </div>
             </div>
           </div>
-
-          <!-- กิจกรรมที่ 6 (มีที่ใส่รูปภาพและเกียรติบัตร) -->
-          <div class="activity-card">
-            <div class="activity-body">
-              <div class="activity-year">[ปีการศึกษา]</div>
-              <div class="activity-title">[ชื่อกิจกรรม/โครงการที่ 6]</div>
-              <div class="cert-caption">เกียรติบัตร: [ชื่อเกียรติบัตร]</div>
-              <p class="activity-desc">[อธิบายสั้นๆ ว่าได้เรียนรู้อะไร ทำกิจกรรมอะไรบ้าง และได้อะไรจากกิจกรรมนี้]</p>
-              
-              <div class="mini-photo-label">ภาพเกียรติบัตร</div>
-              <div class="cert-frame">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="13" rx="1.5"/><path d="M8 7.5h8M8 10.5h5"/><path d="M9.5 16v4.5l2.5-1.6 2.5 1.6V16"/></svg>
-                <span>แนบภาพเกียรติบัตร<br>(ถ่ายรูปหรือสแกน)</span>
-              </div>
-              <div class="cert-info">
-                <p class="plan-line"><b>ออกโดย:</b> [ระบุหน่วยงานที่มอบเกียรติบัตร]</p>
-                <p class="plan-line"><b>วันที่ได้รับ:</b> [ระบุวันที่ได้รับ]</p>
-                <p class="cert-desc">[คำบรรยายเกี่ยวกับเกียรติบัตรนี้ เช่น ได้รับจากการเข้าร่วมกิจกรรมอะไร ในบทบาทใด]</p>
-              </div>
-
-              <div class="mini-photo-label">ภาพการทำกิจกรรม</div>
-              <div class="mini-photo-row">
-                <div class="mini-photo-frame">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.3"/><path d="M8 6l1.2-2h5.6L16 6"/></svg>
-                  <span>รูปที่ 1</span>
-                </div>
-                <div class="mini-photo-frame">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.3"/><path d="M8 6l1.2-2h5.6L16 6"/></svg>
-                  <span>รูปที่ 2</span>
-                </div>
-                <div class="mini-photo-frame">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="1.5"/><circle cx="12" cy="12.5" r="3.3"/><path d="M8 6l1.2-2h5.6L16 6"/></svg>
-                  <span>รูปที่ 3</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
       </div>
     </section>
   </div>
